@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+  {% load staticfiles %}
+     <script src="{% static '/js/validations.js' %}" type="text/javascript"></script>
+
+<body bgcolor="#f5f5dc">
+        <table align="center">
+            <tr>
+                <td>
+                    <img src="{% static 'images/SSS.jpg' %} " width="300" height="120">
+                </td>
+                <td>
+                    <font size="5" face="Arial">
+                        SSN ENGINEERING COLLEGE.ONGOLE
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <marquee>
+                      <font size="3" face="Arial">
+                        ongole
+                    </font></marquee>
+                </th>
+            </tr>
+        </table>
+
+        <table align="center" border="2">
+            <tr>
+                <th width="120">
+                    <a href="/Adminhomepage/?type=Adminhomepage">
+                        Home
+                    </a>
+                </th>
+                <th width="120">
+                    <a href="/studentdetails/?type=studentdetails">
+                        Student Details
+                    </a>
+                </th>
+                <th width="120">
+                    <a href="/studentregistation/?type=branchwise">
+                        Stdent registation
+                    </a>
+                </th>
+                <th width="120">
+                    <a href="/facaltylist/?type=facaltylist">Faculty Details</a> </th>
+                <th width="120">
+                    <a href="/facultyregistation/?type=facultyregistation">Faculty registation</a> </th><th width="120">
+                <a href="/logout/">Logout</a> </th>
+            <th>    <a href="/reviews/?type=reviews">Reviews</a> </th></tr>
+                        <tr><td colspan="7"><img src="{% static 'images/studentprofile.jpg' %}" width="810" height="120"></td></tr>
+        </table>
+ {% if massege %}
+     <h4 align="center">Reviews</h4>
+   <table border="2" align="center" width="823">
+            <tr>
+                <td>Name</td>
+                <td>Contact</td>
+                <td>Email</td>
+                <td>Massege</td>
+                <td>Delete</td>
+            </tr>
+                {% for x in object_list %}
+                <tr>
+                <td>{{ x.name }}</td>
+                <td>{{ x.contact }}</td>
+                <td>{{ x.email }}</td>
+                <td>{{ x.massege }}</td>
+                <td>
+                    <form action="/deletemassege/{{ x.email }}/" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete">
+                    </form>
+                </td></tr>
+            {% endfor %}
+   </table>
+        {% endif %}
+        {% if type == 'ahome' %}
+              <table align="center" width="800">
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td width="350">
+                    <font size="4" face="Arial Rounded MT Bold">
+                                            <img src="{% static 'images/SSN2.jpg' %} " width="800" height="250">
+
+                    SSN is dedicated to imparting futuristic technical and management education in the key academic-industrial areas and instill higher standards of knowledge to students through qualified faculty and excellent infrastructure set to global standards, thus improving the quality of technical education and contributing to the development of the Nation.<br>
+                        Established in the year 2001 at Ongole, Prakasam district, Andhra Pradesh.<br>
+                        Sri Satyanarayana Engineering college is considered to be one of the best and finest colleges that provide professional education to students in AP. Every year thousands of fresh professionals get introduced to the industry by SSN.<br>
+                        With the Wifi college campus spread across 2 acres, students find it the best place to study professional courses.<br>
+                        SSN is affiliated to JNTU Kakinada with Counselling code SSNO
+                    </font>
+                </td>
+                <td>
+{#                    <img src="{% static 'images/SSN2.jpg' %} " width="650" height="250">#}
+                </td>
+            </tr>
+        </table>
+        {% endif %}
+        {% if type == 'Adminhomepage' %}
+            <table align="center" border="2">
+            <tr>
+                           <td>
+{#                    <img src="{% static 'images/ssn6.jpg' %} " width="1000" height="300">#}
+                </td>
+                </tr>
+                <tr>
+                <td width="350">
+                    <font size="4" face="Arial Rounded MT Bold">
+
+
+
+<h3 style="color: darkseagreen" align="center">Sri Y.Ramakrishna Reddy</h3><br>
+
+
+                        <p><img src="{% static 'images/Chairman.jpg' %}" align="left">
+                            <h5>Honourable chiarman of SSN Engineering college.</h5>
+                            Thousands of students and their parents are fortunate for being a part of the SSN Family.<br>
+                            The dedication and commitment of the faculty to the cause ensures the growth of the skills that a student is good at.<br>
+                            Apart from professionals, our college has got National players in different sports like cricket, badminton, volleyball, and others.<br>
+                            What are you waiting for join our SSN Family now.<br>
+                            <br>
+                            <br>
+                            <br>
+                            The annual tuition fee fixed by the Government of Andhra Pradesh(AFRC) for B.Tech courses in this college for the academic year 2016-17,2017-2018,and 2018-2019 is Rs.50,200 (Fifty Thousand two hundred ).<br>
+                        Hence, the candidates taking admission in this college are to give an undertaking that they will pay the difference of tuition fees, if any.<br>
+
+                        The tuition fee is same for both Category – A Seats and Category – B.Seats.<br>
+                            <br>
+                            <br>
+                        The main difference between Category – A Seats and Category – B seats is, B – CATEGORY STUDENTS ARE NOT ELIGIBLE FOR TUITION FEE REIMBURSEMENT OR ANY WELFARE SCHOLARSHIPS.<br>
+
+
+                        1. Details of the fee to be paid at the time of admission into B.Tech<br>
+
+                            Fee details are as per fixed by the Government of Andhrapradesh(AFRC) and JNTKkakinadda.<br>
+                        The mission of those at SSN is to provide quality technical education to satisfy the needs of the Industry and thereby, the society.
+SSN strives to create and uphold a community of learning in which students acquire knowledge and learn to apply it
+professionally, to meet any challenge that they may face and to sustain the progress of the nation towards peace and prosperity.</p>
+                    </font>
+                </td>
+
+            </tr>
+            </table>
+        {% endif %}
+{% if type == 'facultyregistation' %}
+    <table align="center" border="2">
+    <tr><td><a href="/civilregistation/?type=civilregistation">civil</a> </td></tr>
+    <tr><td><a href="/cseregistation/?type=cseregistation">cse</a> </td></tr>
+    <tr><td><a href="/eceregistation/?type=eceregistation">ece</a> </td></tr>
+    <tr><td><a href="/eeeregistation/?type=eeeregistation">eee</a> </td></tr>
+    <tr><td><a href="/mecregistation/?type=mecregistation">me</a> </td></tr>
+    </table>
+{% endif %}
+{% if type == 'civilregistation' %}
+    <form action="/civildetails/" method="post">
+    {% csrf_token %}
+    <h1 align="center">Civil</h1>
+    <table border="2" align="center">
+        <tr><td>{{ msg3 }}</td></tr>
+    <tr>
+        <td><input type="text" placeholder="name" name="f1" required></td></tr>
+       <tr> <td><input type="text" placeholder="idno" name="f2" value="{{ nam }}" required></td></tr>
+        <tr><td><input type="text" placeholder="designantion" name="f3" required></td></tr>
+        <tr><td><input type="text" placeholder="reasearch interest" name="f4" required></td></tr>
+       <tr> <td><input type="number" placeholder="experiance" name="f5" required></td></tr>
+        <tr><td><input type="date" placeholder="dob" name="f6" required></td>
+        <tr><td><input type="submit" value="register"></td>
+    </tr>
+</table>
+        </form>
+
+{% endif %}
+
+{% if type == 'cseregistation' %}
+    <form action="/cseregistationdetails/" method="post">
+    {% csrf_token %}
+    <h1 align="center">CSE</h1>
+    <table border="2" align="center">
+        <tr><td>{{ msg3 }}</td></tr>
+    <tr>
+        <td><input type="text" placeholder="name" name="f1" required></td></tr>
+       <tr> <td><input type="number" placeholder="idno" name="f2" value="{{ nam }}" required></td></tr>
+        <tr><td><input type="text" placeholder="designantion" name="f3" required></td></tr>
+        <tr><td><input type="text" placeholder="reasearch interest" name="f4" required></td></tr>
+       <tr> <td><input type="number" placeholder="experiance" name="f5" required></td></tr>
+        <tr><td><input type="date" placeholder="dob" name="f6" required></td>
+        <tr><td><input type="submit" value="register"></td>
+    </tr>
+</table>
+        </form>
+{% endif %}
+{% if type == 'eceregistation' %}
+       <form action="/eceregistationdetails/" method="post">
+    {% csrf_token %}
+    <h1 align="center">ECE</h1>
+    <table border="2" align="center">
+        <tr><td>{{ msg3 }}</td></tr>
+    <tr>
+        <td><input type="text" placeholder="name" name="f1" required></td></tr>
+       <tr> <td><input type="number" placeholder="idno" name="f2" value="{{ nam }}" required></td></tr>
+        <tr><td><input type="text" placeholder="designantion" name="f3" required></td></tr>
+        <tr><td><input type="text" placeholder="reasearch interest" name="f4" required></td></tr>
+       <tr> <td><input type="number" placeholder="experiance" name="f5" required></td></tr>
+        <tr><td><input type="date" placeholder="dob" name="f6" required></td>
+        <tr><td><input type="submit" value="register"></td>
+    </tr>
+</table>
+        </form>
+{% endif %}
+{% if type == 'eeeregistation' %}
+
+      <h1 align="center">EEE</h1>
+    <form action="/saveeee/" method="post">
+    {% csrf_token %}
+    <table border="2" align="center">
+        <tr><td>{{ msg3 }}</td></tr>
+    <tr>
+        <td><input type="text" placeholder="name" name="f1" required></td></tr>
+       <tr> <td><input type="number" placeholder="idno" name="f2" value="{{ nam }}" required></td></tr>
+        <tr><td><input type="text" placeholder="designantion" name="f3" required></td></tr>
+        <tr><td><input type="text" placeholder="reasearch interest" name="f4" required></td></tr>
+       <tr> <td><input type="number" placeholder="experiance" name="f5" required></td></tr>
+        <tr><td><input type="date" placeholder="dob" name="f6" required></td>
+        <tr><td><input type="submit" value="register"></td>
+    </tr>
+</table>
+        </form>
+{% endif %}
+{% if type == 'mecregistation' %}
+        <h1 align="center">ME</h1>
+    <form action="/mecsavedeatails/" method="post">
+    {% csrf_token %}
+    <table border="2" align="center">
+        <tr><td>{{ msg3 }}</td></tr>
+    <tr>
+        <td><input type="text" placeholder="name" name="f1" required></td></tr>
+       <tr> <td><input type="number" placeholder="idno" name="f2" value="{{ nam }}" required></td></tr>
+        <tr><td><input type="text" placeholder="designantion" name="f3" required></td></tr>
+        <tr><td><input type="text" placeholder="reasearch interest" name="f4" required></td></tr>
+       <tr> <td><input type="number" placeholder="experiance" name="f5" required></td></tr>
+        <tr><td><input type="date" placeholder="dob" name="f6" required></td>
+        <tr><td><input type="submit" value="register"></td>
+    </tr>
+</table>
+        </form>
+{% endif %}
+{% if type == 'facaltylist' %}
+    <table align="center" border="2">
+    <tr><td><a href="/listcivil/?type=listcivil">civil faculty</a> </td></tr>
+    <tr><td><a href="/listcse/?type=listcse">cse  faculty</a> </td></tr>
+    <tr><td><a href="/ecelist/?type=listece">ece faculty</a> </td></tr>
+    <tr><td><a href="/eeelist/?type=listeee">eee faculty</a> </td></tr>
+    <tr><td><a href="/meclist/?type=listme">me faculty</a> </td></tr>
+    </table>
+{% endif %}
+        {% if listcivil %}
+            <table align="center" border="2">
+<tr>
+    <th colspan="8">Civil Faculty Details </th>
+</tr>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td>
+        <td>delete</td>
+        <td>update</td>
+    </tr>
+
+{% for x in object_list %}
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+     <td>
+               <form action="/deletecivilf/{{ x.idno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+             </form>
+    </td>
+    <td bgcolor="#7fff00">
+        <a href="/updatecivilf/{{ x.idno }}">Update</a></td></tr>
+{% endfor %}
+</table>
+        {% endif %}
+        {% if listcse %}
+            <table align="center" border="2">
+<tr>
+    <th colspan="8">Cse Faculty Details </th>
+</tr>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td> <td>delete</td>
+        <td>update</td>
+    </tr>
+
+{% for x in object_list %}
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+    <td>
+               <form action="/deletecsefa/{{ x.idno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+               </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/updatecseup/{{ x.idno }}">Update</a></td>
+{% endfor %}
+        {% endif %}
+        {% if listece %}
+            <table align="center" border="2">
+<tr>
+    <th colspan="8">ECE Faculty Details </th>
+</tr>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td> <td>delete</td>
+        <td>update</td>
+    </tr>
+
+{% for x in object_list %}
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+    <td>
+               <form action="/deleteECEF/{{ x.idno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+               </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/updateECEF/{{ x.idno }}">Update</a></td>
+{% endfor %}
+        {% endif %}
+        {% if listeee %}
+             <table align="center" border="2">
+<tr>
+    <th colspan="8">EEE Faculty Details </th>
+</tr>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td> <td>delete</td>
+        <td>update</td>
+    </tr>
+
+{% for x in object_list %}
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+    <td>
+               <form action="/deleteEEE/{{ x.idno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+               </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/updatecEEE/{{ x.idno }}">Update</a></td>
+{% endfor %}
+        {% endif %}
+        {% if listme %}
+             <table align="center" border="2">
+<tr>
+    <th colspan="8">ME Faculty Details </th>
+</tr>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td> <td>delete</td>
+        <td>update</td>
+    </tr>
+
+{% for x in object_list %}
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+    <td>
+               <form action="/deleteME/{{ x.idno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+               </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/updateME/{{ x.idno }}">Update</a></td>
+{% endfor %}
+        {% endif %}
+{% if type == 'studentdetails' %}
+
+    <table align="center" border="2">
+    <tr><td><a href="/civilstudents/?type=civilstudents">civil students</a> </td></tr>
+    <tr><td><a href="/csestudentlist/?type=csestudentlist">cse  students</a> </td></tr>
+    <tr><td><a href="/eceliststudents/?type=eceliststudents">ece students</a> </td></tr>
+    <tr><td><a href="/eeeliststudents/?type=eeeliststudents">eee students</a> </td></tr>
+    <tr><td><a href="/mecliststudents/?type=mecliststudents">me students</a> </td></tr>
+    </table>
+{% endif %}
+{% if type == 'branchwise' %}
+
+    <table align="center" border="2">
+    <tr><td><a href="/civilstudentsregistation/?type=civilstudentsregistation">civil students</a> </td></tr>
+    <tr><td><a href="/listcsestudentsregistation/?type=listcsestudentsregistation">cse  students</a> </td></tr>
+    <tr><td><a href="/eceliststudentsregistation/?type=eceliststudentsregistation">ece students</a> </td></tr>
+    <tr><td><a href="/eeeliststudentsregistation/?type=eeeliststudentsregistation">eee students</a> </td></tr>
+    <tr><td><a href="/mecliststudentsregistation/?type=mecliststudentsregistation">me students</a> </td></tr>
+    </table>
+{% endif %}
+{% if type == 'civilstudentsregistation' %}
+<form action="/civilregg/" method="post">
+    {% csrf_token %}
+<table border="2" align="center">
+    <tr><td>{{ msg2 }}</td></tr>
+    <tr><td>    <h1>Civil Student registaion form</h1>
+</td></tr>
+    <tr><td>
+        Student name<input type="text" placeholder="student name" name="t1" required></td></tr>
+    <tr><td>
+        Father name  <input type="text" placeholder="father name" name="t2" required></td></tr>
+    <tr><td>
+        course                <input type="text" placeholder="cousre" name="t3" value="civil" required></td></tr>
+    <tr><td>
+        Rolle no     <input type="number" placeholder="rolle no" name="t4" value="{{ nam }}" readonly></td></tr>
+    <tr><td>
+        section       <input type="text" placeholder="section" name="t5" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+{#    <tr><td><input type="text" placeholder="fristyaear" name="y1" required></td>#}
+{#    <td><input type="text" placeholder="secondyaear" name="y2" required></td>#}
+{#    <td><input type="text" placeholder="thrdyaear" name="y3" required></td>#}
+{#    <td><input type="text" placeholder="fourthyaear" name="y4" required></td></tr>#}
+    <tr><td>Frist year sem1-2
+    <input type="text" placeholder="frist year subs" name="y9" required></td></tr>
+    <tr><td>Second year sem1-2
+    <input type="text" placeholder="second year subs" name="y10" required></td></tr>
+    <tr><td>Thard year sem1-2
+    <input type="text" placeholder="thrd year subs" name="y11" required></td></tr>
+    <tr><td>Fourth year sem1-2
+    <input type="text" placeholder="fourth year subs" name="y12" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr><td>
+        persentage<input type="number" placeholder="persentage"  name="y13" required></td></tr>
+    <tr><td align="center"><input type="submit" value="Register"></td></tr>
+
+</table>
+    </form>
+{% endif %}
+{% if type == 'listcsestudentsregistation' %}
+<form action="/cseregg/" method="post">
+    {% csrf_token %}
+<table border="2" align="center">
+    <tr><td>{{ msg2 }}</td></tr>
+    <tr><td>    <h1>Cse Student registaion form</h1>
+</td></tr>
+    <tr><td>
+        Student name<input type="text" placeholder="student name" name="t1" required></td></tr>
+    <tr><td>
+        Father name  <input type="text" placeholder="father name" name="t2" required></td></tr>
+    <tr><td>
+        course                <input type="text" placeholder="cousre" name="t3"value="cse" required></td></tr>
+    <tr><td>
+        Rolle no     <input type="number" placeholder="rolle no" name="t4" value="{{ nam }}" readonly></td></tr>
+    <tr><td>
+        section       <input type="text" placeholder="section" name="t5" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+{#    <tr><td><input type="text" placeholder="fristyaear" name="y1" required></td>#}
+{#    <td><input type="text" placeholder="secondyaear" name="y2" required></td>#}
+{#    <td><input type="text" placeholder="thrdyaear" name="y3" required></td>#}
+{#    <td><input type="text" placeholder="fourthyaear" name="y4" required></td></tr>#}
+    <tr><td>Frist year sem1-2
+    <input type="text" placeholder="frist year subs" name="y9" required></td></tr>
+    <tr><td>Second year sem1-2
+    <input type="text" placeholder="second year subs" name="y10" required></td></tr>
+    <tr><td>Thard year sem1-2
+    <input type="text" placeholder="thrd year subs" name="y11" required></td></tr>
+    <tr><td>Fourth year sem1-2
+    <input type="text" placeholder="fourth year subs" name="y12" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr><td>
+        persentage<input type="number" placeholder="persentage"  name="y13" required></td></tr>
+    <tr><td align="center"><input type="submit" value="Register"></td></tr>
+
+</table>
+    </form>
+{% endif %}
+{% if type == 'eceliststudentsregistation' %}
+    <a href="/Back/">Back</a>
+<form action="/eceregg/" method="post">
+    {% csrf_token %}
+<table border="2" align="center">
+    <tr><td>{{ msg2 }}</td></tr>
+    <tr><td>    <h1>ECE Student registaion form</h1>
+</td></tr>
+    <tr><td>
+        Student name<input type="text" placeholder="student name" name="t1" required></td></tr>
+    <tr><td>
+        Father name  <input type="text" placeholder="father name" name="t2" required></td></tr>
+    <tr><td>
+        course                <input type="text" placeholder="cousre" name="t3" value="ece" required></td></tr>
+    <tr><td>
+        Rolle no     <input type="number" placeholder="rolle no" name="t4" value="{{ nam }}" readonly></td></tr>
+    <tr><td>
+        section       <input type="text" placeholder="section" name="t5" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+{#    <tr><td><input type="text" placeholder="fristyaear" name="y1" required></td>#}
+{#    <td><input type="text" placeholder="secondyaear" name="y2" required></td>#}
+{#    <td><input type="text" placeholder="thrdyaear" name="y3" required></td>#}
+{#    <td><input type="text" placeholder="fourthyaear" name="y4" required></td></tr>#}
+    <tr><td>Frist year sem1-2
+    <input type="text" placeholder="frist year subs" name="y9" required></td></tr>
+    <tr><td>Second year sem1-2
+    <input type="text" placeholder="second year subs" name="y10" required></td></tr>
+    <tr><td>Thard year sem1-2
+    <input type="text" placeholder="thrd year subs" name="y11" required></td></tr>
+    <tr><td>Fourth year sem1-2
+    <input type="text" placeholder="fourth year subs" name="y12" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr><td>
+        persentage<input type="number" placeholder="persentage"  name="y13" required></td></tr>
+    <tr><td align="center"><input type="submit" value="Register"></td></tr>
+
+</table>
+    </form>
+{% endif %}
+{% if type == 'eeeliststudentsregistation' %}
+    <a href="/Back/">Back</a>
+<form action="/eeeregg/" method="post">
+    {% csrf_token %}
+<table border="2" align="center">
+    <tr><td>{{ msg2 }}</td></tr>
+    <tr><td>    <h1>EEE Student registaion form</h1>
+</td></tr>
+    <tr><td>
+        Student name<input type="text" placeholder="student name" name="t1" required></td></tr>
+    <tr><td>
+        Father name  <input type="text" placeholder="father name" name="t2" required></td></tr>
+    <tr><td>
+        course                <input type="text" placeholder="cousre" name="t3" value="eee" required></td></tr>
+    <tr><td>
+        Rolle no     <input type="number" placeholder="rolle no" name="t4" value="{{ nam }}" readonly></td></tr>
+    <tr><td>
+        section       <input type="text" placeholder="section" name="t5" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+{#    <tr><td><input type="text" placeholder="fristyaear" name="y1" required></td>#}
+{#    <td><input type="text" placeholder="secondyaear" name="y2" required></td>#}
+{#    <td><input type="text" placeholder="thrdyaear" name="y3" required></td>#}
+{#    <td><input type="text" placeholder="fourthyaear" name="y4" required></td></tr>#}
+    <tr><td>Frist year sem1-2
+    <input type="text" placeholder="frist year subs" name="y9" required></td></tr>
+    <tr><td>Second year sem1-2
+    <input type="text" placeholder="second year subs" name="y10" required></td></tr>
+    <tr><td>Thard year sem1-2
+    <input type="text" placeholder="thrd year subs" name="y11" required></td></tr>
+    <tr><td>Fourth year sem1-2
+    <input type="text" placeholder="fourth year subs" name="y12" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr><td>
+        persentage<input type="number" placeholder="persentage"  name="y13" required></td></tr>
+    <tr><td align="center"><input type="submit" value="Register"></td></tr>
+
+</table>
+    </form>
+{% endif %}
+{% if type == 'mecliststudentsregistation' %}
+    <a href="/Back/">Back</a>
+<form action="/mecregg/" method="post">
+    {% csrf_token %}
+<table border="2" align="center">
+    <tr><td>{{ msg2 }}</td></tr>
+    <tr><td>    <h1>ME Student registaion form</h1>
+</td></tr>
+    <tr><td>
+        Student name<input type="text" placeholder="student name" name="t1" required></td></tr>
+    <tr><td>
+        Father name  <input type="text" placeholder="father name" name="t2" required></td></tr>
+    <tr><td>
+        course                <input type="text" placeholder="cousre" name="t3" value="me" required></td></tr>
+    <tr><td>
+        Rolle no     <input type="number" placeholder="rolle no" name="t4" value="{{ nam }}" readonly></td></tr>
+    <tr><td>
+        section       <input type="text" placeholder="section" name="t5" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+{#    <tr><td><input type="text" placeholder="fristyaear" name="y1" required></td>#}
+{#    <td><input type="text" placeholder="secondyaear" name="y2" required></td>#}
+{#    <td><input type="text" placeholder="thrdyaear" name="y3" required></td>#}
+{#    <td><input type="text" placeholder="fourthyaear" name="y4" required></td></tr>#}
+    <tr><td>Frist year sem1-2
+    <input type="text" placeholder="frist year subs" name="y9" required></td></tr>
+    <tr><td>Second year sem1-2
+    <input type="text" placeholder="second year subs" name="y10" required></td></tr>
+    <tr><td>Thard year sem1-2
+    <input type="text" placeholder="thrd year subs" name="y11" required></td></tr>
+    <tr><td>Fourth year sem1-2
+    <input type="text" placeholder="fourth year subs" name="y12" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr><td>
+        persentage<input type="number" placeholder="persentage"  name="y13" required></td></tr>
+    <tr><td align="center"><input type="submit" value="Register"></td></tr>
+
+</table>
+    </form>
+{% endif %}
+        {% if civillist %}
+    <h3 align="center">Civil students </h3>
+<table align="center" border="2" width="1010">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td>
+        <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+        <td>persentage</td>
+        <td>delete</td>
+        <td>updata</td>
+    </tr>
+    {% for x in object_list %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+        <td>{{ x.secation }}</td>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+        <td>{{ x.Attendence }}</td>
+                   <td><form action="/deletecivil/{{x.rolleno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+             </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/updatescivil/{{ x.rolleno }}">Update</a></td></tr>
+
+    {% endfor %}
+{% endif %}
+        {% if cselist %}
+            <h3 align="center">CSE students </h3>
+<table align="center" border="2" width="1010">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td>
+        <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+        <td>persentage</td>
+        <td>delete</td>
+        <td>updata</td>
+    </tr>
+    {% for x in object_list %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+        <td>{{ x.secation }}</td>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+        <td>{{ x.Attendence }}</td>
+                   <td><form action="/deletecse/{{x.rolleno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+             </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/updateCSEstudent/{{ x.rolleno }}">Update</a></td></tr>
+
+    {% endfor %}
+{% endif %}
+        {% if ecelist %}
+        <h3 align="center">ECE students </h3>
+</table>
+<table align="center" border="2" width="1010">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td>
+        <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+        <td>persentage</td>
+        <td>delete</td>
+        <td>updata</td>
+    </tr>
+    {% for x in object_list %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+        <td>{{ x.secation }}</td>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+        <td>{{ x.Attendence }}</td>
+                   <td><form action="/Deleteece/{{x.rolleno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+             </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/upadateece/{{ x.rolleno }}">Update</a></td></tr>
+
+    {% endfor %}
+{% endif %}
+        {% if eeelist %}
+        <h3 align="center">EEE students </h3>
+<table align="center" border="2" width="1010">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td>
+        <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+        <td>persentage</td>
+        <td>delete</td>
+        <td>updata</td>
+    </tr>
+    {% for x in object_list %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+        <td>{{ x.secation }}</td>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+        <td>{{ x.Attendence }}</td>
+                   <td><form action="/deleteeee/{{x.rolleno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+             </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/updateseee/{{ x.rolleno }}">Update</a></td></tr>
+
+    {% endfor %}
+{% endif %}
+        {% if melist %}
+        <h3 align="center">ME students </h3>
+<table align="center" border="2" width="1010">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td>
+        <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+        <td>persentage</td>
+        <td>delete</td>
+        <td>updata</td>
+    </tr>
+    {% for x in object_list %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+        <td>{{ x.secation }}</td>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+        <td>{{ x.Attendence }}</td>
+                   <td><form action="/deleteme/{{x.rolleno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+             </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/updatesme/{{ x.rolleno }}">Update</a></td></tr>
+
+    {% endfor %}
+{% endif %}
+
+
+</body>
+</html>

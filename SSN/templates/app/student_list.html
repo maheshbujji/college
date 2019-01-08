@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="2" width="100">
+        <tr><td><a href="/Back/">Back</a>
+
+</td></tr>
+</table>
+<table align="center" border="2" width="1010">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td><br>
+{#        <td>frist year</td>#}
+{#        <td>second year</td>#}
+{#        <td>thard year</td>#}
+{#        <td>fourth year</td>#}
+        <td>frist year sem 1-2</td>
+        <td>second year sem 1-2</td>
+        <td>thard year sem 1-2</td>
+        <br><td>fourth year sem 1-2</td><br>
+        <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+        <td>persentage</td>
+        <td>delete</td>
+        <td>updata</td>
+    </tr>
+    {% for x in object_list %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+        <td>{{ x.secation }}</td>
+{#        <td>{{ x.fristyear }}</td>#}
+{#        <td>{{ x.secondyear }}</td>#}
+{#        <td>{{ x.thardyear }}</td>#}
+{#        <td>{{ x.fourthyear }}</td>#}
+        <td>{{ x.fsemister }}</td>
+        <td>{{ x.ssemister }}</td>
+        <td>{{ x.tsemister }}</td>
+        <td>{{ x.fosemister }}</td>
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+        <td>{{ x.Attendence }}</td>
+                   <td><form action="/deletes/{{x.rolleno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+             </form></td>
+    <td bgcolor="#7fff00">
+        <a href="/updates/{{ x.rolleno }}">Update</a></td></tr>
+
+    {% endfor %}
+{% if studentupdate %}
+<table align="center" border="2" bgcolor="#00ffff">
+<form action="" method="post">
+    {% csrf_token %}
+    <tr>
+        <td>
+            {{ form.as_p }}
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+                <input type="submit" value="update">
+
+        </td>
+    </tr>
+
+
+</form>
+      </table>
+{% endif %}
+
+</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center" border="2" bgcolor="#00ffff">
+<form action="" method="post">
+    {% csrf_token %}
+    <tr>
+        <td>
+            {{ form.as_p }}
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+                <input type="submit" value="update">
+
+        </td>
+    </tr>
+
+
+</form>
+      </table>
+</body>
+</html>

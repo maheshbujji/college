@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>{% load staticfiles %}
+<body>
+    <table border="2" width="100">
+        <tr><td><a href="/logout/">Logout</a>
+
+</td></tr>
+</table>
+    <table align="center" border="2">
+        <tr><th>     {% for x in res %}
+
+            welcom :{{ x.name }}
+        </th></tr>
+
+  <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+<table align="center" border="2" width="800" bgcolor="#8fbc8f">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td></tr>
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+            <td>{{ x.secation }}</td></tr></table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+         <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+         <tr>             <td>frist year sem 1-2</td>
+        <td>second year sem 1-2</td>
+        <td>thard year sem 1-2</td>
+        <td>fourth year sem 1-2</td></tr>
+         <tr>
+                   <td>{{ x.fsemister }}</td>
+        <td>{{ x.ssemister }}</td>
+        <td>{{ x.tsemister }}</td>
+        <td>{{ x.fosemister }}</td>
+         </tr>
+
+         </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+            <table border="2" align="center" width="800" bgcolor="#8fbc8f">
+            <tr>
+                 <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+            </tr>
+            <tr>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+            </tr>
+            </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+        <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+        <tr>
+                    <td align="center">persentage</td>
+
+        </tr>
+        <tr>
+                        <td align="center">{{ x.Attendence }}</td></tr>
+        </table>
+
+
+
+    {% endfor %}
+    </table>
+</body>
+</body>
+</html>

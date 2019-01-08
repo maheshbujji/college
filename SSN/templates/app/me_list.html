@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <tr><td><a href="/Back/">Back</a>
+
+<table align="center" border="2">
+<tr>
+    <th colspan="8">ME Faculty Details </th>
+</tr>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td> <td>delete</td>
+        <td>update</td>
+    </tr>
+
+{% for x in object_list %}
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+     <td>
+               <form action="/deletefme/{{ x.idno}}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+             </form>
+    </td>
+    <td bgcolor="#7fff00">
+        <a href="/updatefme/{{ x.idno }}">Update</a></td></tr>
+{% endfor %}
+</table>
+</body>
+</html>

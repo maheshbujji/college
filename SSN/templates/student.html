@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/Back/">Back</a>
+<form action="/savestudentdetails/" method="post">
+    {% csrf_token %}
+<table border="2" align="center">
+    <tr><td>{{ msg2 }}</td></tr>
+    <tr><td>    <h1>Student registaion form</h1>
+</td></tr>
+    <tr><td>
+        Student name<input type="text" placeholder="student name" name="t1" required></td></tr>
+    <tr><td>
+        Father name  <input type="text" placeholder="father name" name="t2" required></td></tr>
+    <tr><td>
+        course                <input type="text" placeholder="cousre" name="t3" required></td></tr>
+    <tr><td>
+        Rolle no     <input type="text" placeholder="rolle no" name="t4" required></td></tr>
+    <tr><td>
+        section       <input type="text" placeholder="section" name="t5" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+{#    <tr><td><input type="text" placeholder="fristyaear" name="y1" required></td>#}
+{#    <td><input type="text" placeholder="secondyaear" name="y2" required></td>#}
+{#    <td><input type="text" placeholder="thrdyaear" name="y3" required></td>#}
+{#    <td><input type="text" placeholder="fourthyaear" name="y4" required></td></tr>#}
+    <tr><td>Frist year sem1-2
+    <input type="text" placeholder="frist year subs" name="y9" required></td></tr>
+    <tr><td>Second year sem1-2
+    <input type="text" placeholder="second year subs" name="y10" required></td></tr>
+    <tr><td>Thard year sem1-2
+    <input type="text" placeholder="thrd year subs" name="y11" required></td></tr>
+    <tr><td>Fourth year sem1-2
+    <input type="text" placeholder="fourth year subs" name="y12" required></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr><td>
+        persentage<input type="number" placeholder="persentage"  name="y13" required></td></tr>
+    <tr><td align="center"><input type="submit" value="Register"></td></tr>
+
+</table>
+    </form>
+
+</body>
+</html>

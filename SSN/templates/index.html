@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+     <script src="{% static '/js/validations.js' %}" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<table bgcolor="aqua" border="2">
+
+<body bgcolor="#f5f5dc">
+        <table align="center" width="">
+            <tr>
+                <td>
+                    <img src="{% static 'images/ssnlogo.png' %} " width="220" height="120">
+                </td>
+                <td>
+                    <font size="6" face="Arial">
+                        SSN ENGINEERING COLLEGE.ONGOLE
+                    </font>
+                </td>
+                <td><a href="/Admin/?type=Admin">Admin login</a> </td><td>//</td>
+                <td><a href="/studentlogin/?type=studentlogin">student login</a> </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <marquee>
+                      <font size="3" face="" style="color: gray">
+                          <i>SUCCESS IS ALLWAYS WITH SSN</i>
+                    </font></marquee>
+                </th>
+            </tr>
+            <table align="center" border="1">
+                                <tr><td align="center"><img src="{% static 'images/SSN2.jpg' %}" width="1010" height="100"></td>
+
+        </table>
+
+        <table align="center" border="2">
+            <tr>
+                <th width="120">
+                    <a href="/openHomePage/?type=home">
+                        Home
+                    </a>
+                </th>
+                <th width="120">
+                    <a href="/openAbout/?type=About">
+                        About Us
+                    </a>
+                </th>
+                <th width="120">
+                    <a href="/Admissions/?type=Admission">
+                        Admissions
+                    </a>
+                </th>
+                <th width="120">
+                    <a href="/Acadamics/?type=Acadamics">Acadamics</a> </th>
+                <th width="120">
+                    <a href="/Departments/?type=Departments">Departments</a> </th>
+                <th width="120">
+                    <a href="/Compus/?type=Compus">Compus Life</a> </th>
+                <th width="120">
+                    <a href="/Training/?type=Training">Training Placements</a> </th>
+                <th width="120">
+                    <a href="/Contact/?type=Contact">
+                        Contact Us
+                        </a>
+                </th>
+            </tr>
+        </table>
+        {% if type == 'homedata' %}
+        <table border="2" align="center" width="1000">
+            <tr><th>                        SSN ENGINEERING COLLEGE.ONGOLE
+</th></tr>
+            <tr><td>Thousands of students and their parents are fortunate for being a part of the SSN Family.<br>
+                The dedication and commitment of the faculty to the cause ensures the growth of the skills that a student is good at.<br>
+                Apart from professionals, our college has got National players in different sports like cricket, badminton, volleyball, and others.<br>
+                What are you waiting for join our SSN Family now.<br>
+                SSN is dedicated to imparting futuristic technical and management education in the key academic-industrial areas and instill higher standards of knowledge to students through qualified faculty and excellent infrastructure set to global standards, thus improving the quality of technical education and contributing to the development of the Nation.<br>
+                Established in the year 2001 at Ongole, Prakasam district, Andhra Pradesh.<br>
+                Sri Satyanarayana Engineering college is considered to be one of the best and finest colleges that provide professional education to students in AP.<br>
+                Every year thousands of fresh professionals get introduced to the industry by SSN.<br>
+                With the Wifi college campus spread across 2 acres, students find it the best place to study professional courses.<br>
+                SSN is affiliated to JNTU Kakinada with Counselling code SSNO</td></tr>
+           <tr><td><img src="{% static 'images/home1.jpg' %}" width="1010" height="200"></td></tr>
+           <tr><td align="center"><img src="{% static 'images/ssnprinciapal.jpg' %}" width="500" height="250"></td></tr>
+            <tr><td><img src="{% static 'images/home2.jpg' %}"width="1010" height="200"></td></tr>
+            <tr><td><img src="{% static 'images/home3.jpg' %}"width="1010" height="200"></td></tr>
+            <tr><td><img src="{% static 'images/home5.jpg' %}" width="1010" height="200"></td></tr>
+            <tr><td><img src="{% static 'images/hmoe6.jpg' %}"width="1010" height="200"></td></tr>
+            <tr><td><img src="{% static 'images/home7.jpg' %}"width="1010" height="200"></td></tr>
+        </table>
+{% endif %}
+        {% if type == 'studentlogin' %}
+            <table align="center" border="2">
+            <tr><td><a href="/ECEstudent/?type=ECEstudent">ECE student</a> </td></tr>
+            <tr><td><a href="/EEEstudent/?type=EEEstudent">EEE student</a> </td></tr>
+            <tr><td><a href="/CSEstudent/?type=CSEstudent">CSE student</a> </td></tr>
+            <tr><td><a href="/CIVILstudents/?type=CIVILstudents">CIVIL student</a> </td></tr>
+            <tr><td><a href="/MEstudents/?type=MEstudents">ME student</a> </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'CIVILstudents' %}
+
+                   <form action="/Civilrolleno/" method="post">
+            {% csrf_token %}
+            <table align="center" border="2">
+            <tr><td>{{ msg7 }}</td></tr>
+                <tr><td> CIVIL student login</td></tr>
+            <tr><td><input type="text" placeholder="username" name="username"></td></tr>
+            <tr><td><input type="password" placeholder="userpassword" name="userpassword"></td></tr>
+            <tr><td align="center"><input type="submit" value="login"></td></tr>
+            </table>
+            </form>
+        {% endif %}
+        {% if type == 'MEstudents' %}
+            <form action="/merolleno/" method="post">
+            {% csrf_token %}
+            <table align="center" border="2">
+            <tr><td>{{ msg7 }}</td></tr>
+                <tr><td> ME student login</td></tr>
+            <tr><td><input type="text" placeholder="username" name="username"></td></tr>
+            <tr><td><input type="password" placeholder="userpassword" name="userpassword"></td></tr>
+            <tr><td align="center"><input type="submit" value="login"></td></tr>
+            </table>
+            </form>
+        {% endif %}
+        {% if type == 'CSEstudent' %}
+                   <form action="/cserolleno/" method="post">
+            {% csrf_token %}
+            <table align="center" border="2">
+            <tr><td>{{ msg7 }}</td></tr>
+                <tr><td> CSE student login</td></tr>
+            <tr><td><input type="text" placeholder="username" name="username"></td></tr>
+            <tr><td><input type="password" placeholder="userpassword" name="userpassword"></td></tr>
+            <tr><td align="center"><input type="submit" value="login"></td></tr>
+            </table>
+            </form>
+        {% endif %}
+        {% if type == 'ecestudentprofile' %}
+            <table border="2" width="100">
+        <tr><td><a href="/logout/">Logout</a>
+
+</td></tr>
+</table>
+    <table align="center" border="2">
+        <tr><th>     {% for x in ece %}
+
+            welcom :{{ x.name }}
+        </th></tr>
+        <tr><td><img src="{% static 'images/studentprofile.jpg' %}" width="800" height="200"></td></tr>
+
+  <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+<table align="center" border="2" width="800" bgcolor="#8fbc8f">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td></tr>
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+            <td>{{ x.secation }}</td></tr></table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+         <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+         <tr>             <td>frist year sem 1-2</td>
+        <td>second year sem 1-2</td>
+        <td>thard year sem 1-2</td>
+        <td>fourth year sem 1-2</td></tr>
+         <tr>
+                   <td>{{ x.fsemister }}</td>
+        <td>{{ x.ssemister }}</td>
+        <td>{{ x.tsemister }}</td>
+        <td>{{ x.fosemister }}</td>
+         </tr>
+
+         </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+            <table border="2" align="center" width="800" bgcolor="#8fbc8f">
+            <tr>
+                 <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+            </tr>
+            <tr>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+            </tr>
+            </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+        <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+        <tr>
+                    <td align="center">persentage</td>
+
+        </tr>
+        <tr>
+                        <td align="center">{{ x.Attendence }}</td></tr>
+        </table>
+
+
+
+    {% endfor %}
+        {% endif %}
+        {% if type == 'civilstidentprofile'%}
+             <table border="2" width="100">
+        <tr><td><a href="/logout/">Logout</a>
+
+</td></tr>
+</table>
+    <table align="center" border="2">
+        <tr><th>     {% for x in ece %}
+
+            welcom :{{ x.name }}
+        </th></tr>
+        <tr><td><img src="{% static 'images/studentprofile.jpg' %}" width="800" height="200"></td></tr>
+
+  <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+<table align="center" border="2" width="800" bgcolor="#8fbc8f">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td></tr>
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+            <td>{{ x.secation }}</td></tr></table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+         <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+         <tr>             <td>frist year sem 1-2</td>
+        <td>second year sem 1-2</td>
+        <td>thard year sem 1-2</td>
+        <td>fourth year sem 1-2</td></tr>
+         <tr>
+                   <td>{{ x.fsemister }}</td>
+        <td>{{ x.ssemister }}</td>
+        <td>{{ x.tsemister }}</td>
+        <td>{{ x.fosemister }}</td>
+         </tr>
+
+         </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+            <table border="2" align="center" width="800" bgcolor="#8fbc8f">
+            <tr>
+                 <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+            </tr>
+            <tr>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+            </tr>
+            </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+        <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+        <tr>
+                    <td align="center">persentage</td>
+
+        </tr>
+        <tr>
+                        <td align="center">{{ x.Attendence }}</td></tr>
+        </table>
+
+
+
+    {% endfor %}
+        {% endif %}
+        {% if type == 'mestudentprofiles' %}
+            <table border="2" width="100">
+        <tr><td><a href="/logout/">Logout</a>
+
+</td></tr>
+</table>
+    <table align="center" border="2">
+        <tr><th>     {% for x in ece %}
+
+            welcom :{{ x.name }}
+        </th></tr>
+        <tr><td><img src="{% static 'images/studentprofile.jpg' %}" width="800" height="200"></td></tr>
+
+  <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+<table align="center" border="2" width="800" bgcolor="#8fbc8f">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td></tr>
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+            <td>{{ x.secation }}</td></tr></table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+         <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+         <tr>             <td>frist year sem 1-2</td>
+        <td>second year sem 1-2</td>
+        <td>thard year sem 1-2</td>
+        <td>fourth year sem 1-2</td></tr>
+         <tr>
+                   <td>{{ x.fsemister }}</td>
+        <td>{{ x.ssemister }}</td>
+        <td>{{ x.tsemister }}</td>
+        <td>{{ x.fosemister }}</td>
+         </tr>
+
+         </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+            <table border="2" align="center" width="800" bgcolor="#8fbc8f">
+            <tr>
+                 <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+            </tr>
+            <tr>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+            </tr>
+            </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+        <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+        <tr>
+                    <td align="center">persentage</td>
+
+        </tr>
+        <tr>
+                        <td align="center">{{ x.Attendence }}</td></tr>
+        </table>
+
+
+
+    {% endfor %}
+        {% endif %}
+        {% if type == 'csestudentprofile' %}
+                    <table border="2" width="100">
+        <tr><td><a href="/logout/">Logout</a>
+
+</td></tr>
+</table>
+    <table align="center" border="2">
+        <tr><th>     {% for x in ece %}
+
+            welcom :{{ x.name }}
+        </th></tr>
+        <tr><td><img src="{% static 'images/studentprofile.jpg' %}" width="800" height="200"></td></tr>
+
+  <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+<table align="center" border="2" width="800" bgcolor="#8fbc8f">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td></tr>
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+            <td>{{ x.secation }}</td></tr></table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+         <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+         <tr>             <td>frist year sem 1-2</td>
+        <td>second year sem 1-2</td>
+        <td>thard year sem 1-2</td>
+        <td>fourth year sem 1-2</td></tr>
+         <tr>
+                   <td>{{ x.fsemister }}</td>
+        <td>{{ x.ssemister }}</td>
+        <td>{{ x.tsemister }}</td>
+        <td>{{ x.fosemister }}</td>
+         </tr>
+
+         </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+            <table border="2" align="center" width="800" bgcolor="#8fbc8f">
+            <tr>
+                 <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+            </tr>
+            <tr>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+            </tr>
+            </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+        <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+        <tr>
+                    <td align="center">persentage</td>
+
+        </tr>
+        <tr>
+                        <td align="center">{{ x.Attendence }}</td></tr>
+        </table>
+
+
+
+    {% endfor %}
+        {% endif %}
+        {% if type == 'eeestudentprofile' %}
+            <table border="2" width="100">
+        <tr><td><a href="/logout/">Logout</a>
+
+</td></tr>
+</table>
+    <table align="center" border="2">
+        <tr><th>     {% for x in ece %}
+
+            welcom :{{ x.name }}
+        </th></tr>
+        <tr><td><img src="{% static 'images/studentprofile.jpg' %}" width="800" height="200"></td></tr>
+
+  <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+<table align="center" border="2" width="800" bgcolor="#8fbc8f">
+    <tr>
+        <td>student name:</td>
+        <td>father name:</td>
+        <td>course name:</td>
+        <td>rolle no:</td>
+        <td>section no:</td></tr>
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.fname }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.rolleno }}</td>
+            <td>{{ x.secation }}</td></tr></table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+         <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+         <tr>             <td>frist year sem 1-2</td>
+        <td>second year sem 1-2</td>
+        <td>thard year sem 1-2</td>
+        <td>fourth year sem 1-2</td></tr>
+         <tr>
+                   <td>{{ x.fsemister }}</td>
+        <td>{{ x.ssemister }}</td>
+        <td>{{ x.tsemister }}</td>
+        <td>{{ x.fosemister }}</td>
+         </tr>
+
+         </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+            <table border="2" align="center" width="800" bgcolor="#8fbc8f">
+            <tr>
+                 <td>frist year subjects</td>
+        <td>second year subjects</td>
+        <td>thard year subjects</td>
+        <td>fourth year subjects</td>
+            </tr>
+            <tr>
+
+        <td>{{ x.fsub }}</td>
+        <td>{{ x.ssub }}</td>
+        <td>{{ x.tsub }}</td>
+        <td>{{ x.fosub }}</td>
+            </tr>
+            </table>
+         <table>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         </table>
+
+        <table align="center" border="2" width="800" bgcolor="#8fbc8f">
+        <tr>
+                    <td align="center">persentage</td>
+
+        </tr>
+        <tr>
+                        <td align="center">{{ x.Attendence }}</td></tr>
+        </table>
+
+
+
+    {% endfor %}
+        {% endif %}
+        {% if type == 'ECEstudent' %}
+            <form action="/ECErolle/" method="post">
+            {% csrf_token %}
+            <table align="center" border="2">
+            <tr><td>{{ msg1 }}</td></tr>
+                <tr><td> ECE student login</td></tr>
+            <tr><td><input type="text" placeholder="username" name="username"></td></tr>
+            <tr><td><input type="password" placeholder="userpassword" name="userpassword"></td></tr>
+            <tr><td align="center"><input type="submit" value="login"></td></tr>
+            </table>
+            </form>
+        {% endif %}
+        {% if type == 'EEEstudent' %}
+                <form action="/eeerolleno/" method="post">
+            {% csrf_token %}
+            <table align="center" border="2">
+            <tr><td>{{ msg7 }}</td></tr>
+                <tr><td> EEE student login</td></tr>
+            <tr><td><input type="text" placeholder="username" name="username"></td></tr>
+            <tr><td><input type="password" placeholder="userpassword" name="userpassword"></td></tr>
+            <tr><td align="center"><input type="submit" value="login"></td></tr>
+            </table>
+            </form>
+        {% endif %}
+        {% if type == 'Contact' %}
+            <table width="800" align="center" border="2">
+
+            <tr><td><img src="{% static 'images/ssnmaping2.png' %}" width="1000" height="200"></td></tr>
+            </table>
+            <table align="center" border="2" width="">
+            <form action="/useraccount/" method="post">
+                {% csrf_token %}
+                            <tr><td>{{ msa0 }}</td></tr>
+
+                <tr><td>{{ msg9 }}</td></tr>
+                <h5 align="center">Give feedback here</h5>
+            <p></p><tr><td><input type="text" placeholder="name" name="name" required></td></tr>
+            <tr><td><input type="number" placeholder="contact" name="contact" required></td></tr>
+            <tr><td><input type="email" placeholder="email" name="email" required></td></tr>
+                <tr><td><textarea placeholder="message" name="message" required></textarea></td></tr>
+                <tr><td><input type="submit" value="send"></input></td></tr>
+                <tr><td><a href="/openreviews/?type=openreviews">Open Reviews</a> </td></tr>
+            </form>
+            </table>
+
+<table align="center">
+{% load staticfiles %}
+<tr>
+    <td>
+              <div class="project-container">
+    <video class="content" controls loop width="300" height="300">
+          <source src="{% static 'images/ss1v.mp4' %}">
+    </video>
+              </div></td></tr>
+    <tr>
+    <td>
+              <div class="project-container">
+    <video class="content" controls loop width="300" height="300">
+          <source src="{% static 'images/ssn2.mp4' %}">
+    </video>
+              </div></td></tr>
+    <tr>
+    <td>
+        <div class="project-container">
+    <video class="content" controls loop width="300" height="300">
+          <source src="{% static 'images/ssn4.mp4' %}">
+    </video>
+        </div></td></tr>
+    <tr>  <td>
+        <div class="project-container">
+    <video class="content" controls loop width="300" height="300">
+          <source src="{% static 'images/ssn5.mp4' %}">
+    </video>
+        </div></td></tr>
+</table>
+        {% endif %}
+        {% if masseges %}
+             <h4 align="center">Reviews</h4>
+   <table border="2" align="center">
+            <tr>
+                <td>Name</td>
+                <td>Contact</td>
+                <td>Email</td>
+                <td>Massege</td>
+{#                <td>Delete</td>#}
+            </tr>
+                {% for x in object_list %}
+                <tr>
+                <td>{{ x.name }}</td>
+                <td>{{ x.contact }}</td>
+                <td>{{ x.email }}</td>
+                <td>{{ x.massege }}</td>
+{#                <td>#}
+{#                    <form action="/deletemassege/{{ x.email }}/" method="post">#}
+{#                        {% csrf_token %}#}
+{#                        <input type="submit" value="Delete">#}
+{#                    </form>#}
+{#                </td></tr>#}
+            {% endfor %}
+        {% endif %}
+        {% if type == 'Abouttap' %}
+            <table align="center" border="2" width="1010" style="margin-top: 20px">
+            <tr><td><img src="{% static 'images/training1.jpg' %}" width="1010" height="70"></td></tr>
+            <tr><td>
+                <p>
+                    <img src="{% static 'images/traning2.jpg' %}" align="left">The Department of Training & Placement Cell was established in the year 2006.<br>
+                Since then there has no looking back in the field of placements.<br>
+                Our students have been offered jobs in the following top most companies.<br>
+                Presently the cell functions under the leadership of Mr. P.Venkateswara Reddy, a young and dynamic personality with strong planning and organizational Skills.<br>
+                    </p>
+                <h3>OBJECTIVES :</h3>
+
+ <p>
+     <img src="{% static 'images/traning3.jpg' %}" align="right">To organize campus interviews for final year students with industries and business houses of repute from all over India.<br>
+ To prepare students to face campus interviews by arranging training in Aptitude tests, group discussions, preparing for Technical and HR interviews through professional trainers and MeRITS alumni.<br>
+ To arrange Industrial visits and In-Plant training.<br>
+ To arrange final semester project for the students.<br>
+ To promote career counseling by organizing guidance lectures by senior corporate personnel and most importantly by the immediately placed senior students.
+     </p>
+</td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Placements' %}
+            <table border="2" align="center" width="1010">
+            <tr><td><img src="{% static 'images/wipro.jpg' %}"></td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Training' %}
+            <table align="center" border="2" style="margin-top: 20px">
+            <tr><td><a href="/Abouttap/?type=Abouttap">About TAP</a> </td></tr>
+            <tr><td><a href="/Placements/?type=Placements">Placements</a> </td></tr>
+{#            <tr><td><a href="//">Students Profiles</a> </td></tr>#}
+            </table>
+        {% endif %}
+        {% if type == 'boysgirl' %}
+            <table border="2" align="center" width="1010">
+                <tr><td><h1 align="center">Girls Hostel:</h1>
+                    <p><img src="{% static 'images/girls.jpg' %}" align="right" width="350">
+                    *The College has a comfortably designed, highly secured Hostel for Girls located within the Campus with well Laid–out approach Roads and accommodation available is for 350 students.<br>
+                    *The Hostel has excellent mess facility with spacious Dining Hall, Modern Kitchen for Hygienic Food Preparation. The Hostel & Mess are equipped with R.O Plant for safe drinking water.<br>
+                    *Sporting facilities like Shuttle Badminton, Tennikoit courts and Indoor Games like Carroms, Chequers, Table Tennis are provided for the Physcial Well being and mental relaxation of the students.<br>
+                    *A separate Hall for T.V has been provided on Saturdays, Sundays and Public Holidays for this recreation of Hostellers. Transport is available round the clock for any emergencies.<br>
+                    *Lady Workers are available to arrange for any specific items procurement from Market and to accompany the students for local shopping.<br></p>
+
+
+<h1>Boys Hostel:</h1>
+<p><img src="{% static 'images/boys.jpg' %}" align="left" width="350">*Excellent Hostel facilities have been for Boys is being provided to accommodate about 520 Students.<br>
+                    *The Hostel is situated within the Campus. The Hostel has been provided with Modern Kitchen and Dining Hall.<br>
+                    *The Dining Hall has a seating capacity for about 200 members. For Students recreation One T. V has been provided to specified timings on Saturday, Sunday and Public Holidays.<br>
+                    *The separate T.V Hall is also used as common Room for Reading Newspapers, Magazines etc.<br>
+                    *The Warden takes care of the welfare of the students assisted by resident care takers in each block for emergency assistance and general supervision.<br>
+    *Sporting facilities like Shuttle Badminton, Tennikoit courts and Indoor Games like Carroms, Chequers, Table Tennis are provided for the Physcial Well being and mental relaxation of the students.</p>
+</td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'hostellibrary' %}
+            <table align="center" border="2" width="1010">
+                <tr><td><h1 align="center">Libraries</h1><br>
+
+
+
+<h2 align="center" style="color: lightcoral">SSN Library is rich with all facilities and recommended volumes:</h2><br>
+
+<p style="color: cadetblue"><img src="{% static 'images/library5.jpg' %}" align="left">
+                    Library having Books with 5500 Titles, 22,762 Volumes and 85 Journals & Magazines.
+ Spacious and Highly ventilated
+ Reference section enriched with high standard back volumes
+
+                    <h5>Internet Lab</h5>
+
+More than Twenty systems connected to LAN with Internet facility are provided for the Students.<br>
+                    They can use the facility for their project work, preparation for seminars and paper presentations, online access to IEEE journals, e-books and study material.<br>
+                    Internet facility is provided to access the previous question papers, teaching schedules, internal marks, attendance, daily circulars etc.<br>
+
+                    <h5>NPTEL resources:</h5>
+
+
+1. Books are issued to the students and staff on loan basis.<br>
+2.Two renewals of books will be allowed provided there are no reservations against these books.<br>
+                    For renewals the members shall produce the books physically and also submit their ID cards.<br>
+3. The borrowers are solely responsible for any damage and loss to the books borrowed by them. They shall satisfy them selves with the condition of the books at the time of borrowing.<br>
+4. Failure to return books before the due dates mentioned on the slips, what ever may be the reason shall attract the following rates of over due charges.<br>
+First seven days Rs 1/- per day and from 8th day onwards Rs 2/- per day. Holidays are not excluded while counting the days of late return.
+If the due date mentioned on the due date slip happens to be a holiday, the due date will be taken as the next immediate working day.
+If a book is not returned with in 50 days from the due date, the cost of the book along with over due charges will be leived.
+The candidate should keep the books clean, do not tear up or stain the leaves and do not make pencil or other marks on them.
+
+                    <h5>Loss of books</h5><br>
+                    
+Loss of books, if any shall be reported to the librarian immediately and the borrower shall be permitted to provide the replacement with good copy of similar book only on obtaining the permission from the Head of the Institution.
+If the borrower fails to replace the lost book within the time fixed, twice the cost of the book and the over due charges will be levied.<br>
+
+                    <h5>Reservation of books</h5><br>
+
+The members shall reserve any book which is already in issue.<br>
+                    The reserved books after their return will be kept at the counter for two consecutive days for the benefit of those who reserved them.<br>
+                    If they fail to collect them within two days these books shall be issued to the members in the waiting list and the members shall forfeit their seniority in reservation.<br>
+
+General rules
+
+<p style="color: cadetblue"><img src="{% static 'images/library7.jpg' %}" align="left" height="300">
+1. Members without ID cards will not be allowed in to the library.<br>
+2. All members shall sign in the register provided at the entrance accepting the rules and regulations of the library.<br>
+3. Personal books, files and other articles (except a small note book or loose sheets of paper) will not be allowed inside the library.<br>
+4. Strict silence shall always be maintained in the library.<br>
+5. Any marking or writing in the book is strictly prohibited.<br>
+6. Misbehavior in the library will lead to cancellation of membership and also attracts serious disciplinary action.<br>
+7. Notwithstanding any of these rules, the decision of the authorities of the college shall be final in all matters.<br>
+    8. Before attending the final project viva-voce the candidate must return all the barrowed books to the libraryand collect the "no dues".</p></td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Transport' %}
+            <table align="center" border="2" width="1010">
+                <tr><td><h2 align="cente">Transportation</h2>
+                    <p></p><img src="{% static 'images/bus1.jpg' %}" align="left" height="200">
+</p>
+The college vehicles are driven by authorized drivers.<br>
+                    They maintain a log book in each vehicle, indicating the kilometer readings, place of journey, timings, quantity of diesel filled "if any and the person's signature using the vehicle".<br>
+                    The driver should keep the vehicle in condition and report to the Principal of any problems. One driver should be available in the night for any emergency.<br>
+                    In case of emergency for the students, the vehicles can be used with an intimation to V.P/Principal
+                <img src="{% static 'images/bus2.jpg' %}" height="150">
+                <img src="{% static 'images/bus3.jpg' %}" width="1010" height="100">
+                </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'sports' %}
+            <table width="1010" align="center" border="2">
+            <tr><td>
+
+                <h1 align="center" style="color: cadetblue">Sports & Games</h1><br>
+
+
+
+<p style="font-weight: bold">The college has provided necessary facilities for games & sports for Boys and girls.<br>
+                A qualified and well trained physical Director has been appointed to conduct classes and train the students in all games and sports.<br>
+                sssn has launched a wide variety of sports and games activities to the students to inculcate competitive spirit among the students.<br>
+                Our college is endowed with full fledged equipment for playing different games and sports.<br>
+    <img src="{% static 'images/ground.jpg' %}" align="left"></p>
+
+                <h3 style="color: cadetblue">Sports facilities :</h3><br>
+                <p style="font-weight: bold"><img src="{% static 'images/SSN2.jpg' %}" align="right" width="650">
+ Separate indoor and out door games and sports areas for boys & Girls.<br>
+ Specialist Coaches for various games and sports.<br>
+ A time table to coach students regularly.<br>
+ A mini outdoor stadium for different activities.<br>
+ An athletic track for track & field events.<br>
+ College teams are participating in Inter Collegiate and Inter University Tournaments.<br>
+ Flood light arrangement for outdoor games and sports.<br>
+ Practicing equipment for cricket.<br>
+ Grace court for foot ball.<br>
+ Special coaching to players for participating in Inter-Collegiate tournaments under JNTK.<br>
+                    Badminton, Basket Ball, Chess, Carroms, Cricket, Foot Ball, Table Tennis, Hockey, Throw Ball, Tennycoit, Volley ball.</p>
+
+ </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Compus' %}
+            <table align="center" border="2" width="1010">
+{#            <tr><td><a href="//">Compus facilities</a> </td></tr>#}
+            <tr><td align="center"><a href="/hostellibrary/?type=hostellibrary">Library</a> </td></tr>
+            <tr><td align="center"><a href="/boysgirl/?type=boysgirl">Hostels</a> </td></tr>
+            <tr><td align="center"><a href="/Transport/?type=Transport">Transport</a> </td></tr>
+            <tr><td align="center"><a href="/sports/?type=sports">sports Facility</a> </td></tr>
+                <tr><td>
+                    <h4 style="color: cadetblue">Cultural and Literary Association</h4><br>
+In order to foster students’ innate talents the literary and cultural Association of SSN conducts events like Essay writing, general quiz, dumb charades, Elocution, Mimicry, Volte-face, Extempore, Singing, Dance, Debate, Skit etc.<br>
+                These are great opportunities for the students to show their skills, and display their leadership qualities.<br>
+
+                <h4 style="color: cadetblue">NSS</h4>
+The institution has an NSS unit, which establishes a meaningful linkage between the campus and community.<br>
+                Activities such as Blood donation, Tree Plantation, campus cleaning, a collection of donations for the people affected in disaster, health and technical education to rural communities, rallies for communal harmony and concept awareness as well as some general socio-environmental activities are undertaken by the students.<br>
+
+                <h4 style="color: cadetblue">Physical Education</h4>
+Physical Education classes are an integral part of our college education.<br>
+                We have separate grounds and courts where activities and practice sessions are conducted.<br>
+                The selected players represent the college in various competitions.<br>
+
+
+
+<h4 style="color: cadetblue">Gymnasium</h4>
+State of the art gym is provided to SSN students to improve physical fitness and prepare for tournaments.<br>
+                Facilities include treadmills, weights, etc.<br>
+
+
+
+<h4 style="color: cadetblue">Cricket</h4>
+Cricket ground and practice nets are provided within the campus for regular practice and hosting tournaments.<br>
+                SSN students enjoy attending the tournaments and cheering for their favorite teams and players.</p></td></tr>
+{#            <tr><td><a href="//">Antiragging</a> </td></tr>#}
+            </table>
+        {% endif %}
+        {% if type == 'Admin' %}
+            <form action="/adminlogin/" method="post">
+            {% csrf_token %}
+            <table align="center" border="2">
+            <tr><td>{{ msg }}</td></tr>
+            <tr><td><input type="text" placeholder="username" name="username"></td></tr>
+            <tr><td><input type="password" placeholder="userpassword" name="userpassword"></td></tr>
+            <tr><td align="center"><input type="submit" value="login"></td></tr>
+            </table>
+            </form>
+        {% endif %}
+        {% if type == 'Departments' %}
+            <table align="center" border="2" style="margin-top: 20px">
+            <tr><td><a href="/Dcivil/?type=Dcivil"> Civil Engineering</a></td></tr>
+            <tr><td><a href="/DSince/?type=DSince"> Computer Since and Engineering</a></td></tr>
+            <tr><td><a href="/DElectronics/?type=DElectronics"> Electronics and Communication Engineering</a></td></tr>
+            <tr><td><a href="/DElectrical/?type=DElectrical">Electrical and Electronics  Engineering</a></td></tr>
+            <tr><td><a href="/DMechanical/?type=DMechanical">Mechanical Engineering</a></td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Dcivil' %}
+            <table align="center" border="2" style="margin-top: 20px">
+            <tr><td><a href="/Dprogramsc/?type=Dprogramsc">Programs offered</a> </td></tr>
+            <tr><td><a href="/Dfacultycivil/">Faculty</a> </td></tr>
+            <tr><td><a href="/Dstudentc/?type=Dstudentc">Student Activees</a> </td></tr>
+            <tr><td><a href="/Dgalleryc/?type=Dgalleryc">Gallery</a> </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Dprogramsc' %}
+            <table border="2" align="center" width="1010" style="margin-top: 20px">
+                <tr><td><h1 align="center" style="color: cadetblue">Programs Offered in Civil Engineering</h1>
+                   <p><img src="{% static 'images/civil2.jpg' %}" align="right" height="250"> <h2 style="color: gray"> PROGRAM: B.Tech</h2>
+                    <h3 style="color: cadetblue"> INTAKE : 60</h3>
+                    <p style="color:cornflowerblue">ACADEMIC REGULATIONS FOR UG (B.Tech): SYLLABUS FOR I B.TECH :<br>
+(Common for All Branches)<br>
+                    SYLLABUS FOR II, III, IV B.TECH :</p></td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Dstudentc' %}
+            <table align="center" border="2" width="1010" style="margin-top: 20px">
+            <tr><td><h1 align="center">Student Activities in Civil Engineering:</h1>
+                <p><img src="{% static 'images/SSS.jpg' %}" align="left">*Seminars by students on various relevant and informative topics.<br>
+	*Group discussions and Just a minute programmes for improving the communications skills.<br>
+	*Guest lectures by eminent academicians and field Engineers, so that the guests can share their valuable expertise and knowledge with the student members.
+	Visits to Engineering Projects, construction sites, factories, workshops, laboratories etc.<br>
+	*Competitions on technical subjects including paper writing, technical quiz etc.<br>
+                    *Any other activity conducive to the technical and intellectual advancement of the students.<br></p>
+ </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Dgalleryc' %}
+                <tr><td><img src="{% static 'images/civil1.jpg' %}"></td></tr>
+                <tr><td><img src="{% static 'images/civil2.jpg' %}"></td></tr>
+                <tr><td><img src="{% static 'images/civil3.jpg' %}"></td></tr>
+                <tr><td><img src="{% static 'images/civil5.jpg' %}"></td></tr>
+                <tr><td><img src="{% static 'images/civil6.jpg' %}"></td></tr>
+                <tr><td><img src="{% static 'images/civil8.JPG' %}"></td></tr>
+                {% endif %}
+        {% if type == 'DSincep' %}
+            <table align="center" border="2" width="1010" style="margin-top: 20px">
+                <tr><td><h1 align="center" style="color: cornflowerblue">Programs Offered in CSE</h1>
+                   <p style="color: cadetblue"><img src="{% static 'images/cse1.JPG' %}" align="right" height="200" width="500"><h2 align="center">PROGRAM: B.Tech</h2>
+                    INTAKE : 60<br>
+ACADEMIC REGULATIONS FOR UG (B.Tech): SYLLABUS FOR I B.TECH :<br>
+(Common for All Branches)<br>
+                    <h5 align="center">SYLLABUS FOR II, III, IV B.TECH :</h5></p>
+ </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DSincesa' %}
+            <table align="center" border="2" width="1010">
+                <tr><td><h1 align="center">Student Activities in CSE</h1>
+
+
+
+<h3>1.	SEMINARS ON VARIOUS TRENDS IN COMPUTER FIELD</h3><br>
+*The seminars-and-papers contests are held by the forum so the students get used to speaking to people. This event aims at developing the presentation skills of the student. On behalf of technical forum, students delivered seminars on varius topics, which were quite informative.<br>
+                    <h3>2.	GROUP DISCUSSIONS</h3><br>
+*In the present world, communication skills play an improtant role in achieving success. The art of Effective Communicaiton is shown to the students through this activity. GDs were conducted for III and IV year students. A total of 53 enrolled their names for Group Discussions. Selected students were allowed to participate in semi-finals and finals. The forum conducted GDs on various technical and general aspects like<br>
+* "Is scientifc development threat to religion development"<br>
+"Is computer science curse or boon"<br>
+"Integrity at work"<br>
+"Will computer control humans in future"<br>
+"Are Indian political leaders really leaders"<br>
+
+
+<h3>3.	SOFTWARE CONTEST</h3><br>
+*In this event, students will be asked to a critical problem by using any software of their choice. A total of 34 registered their names for software contest. The topic given to III and IV year students with respect to this event was "Identification of middle element when we merge 2 sorted lists, without using merge sort"<br>
+<h3>                    4.	SINGLE USER DUAL MODE</h3><br>
+*In this event, students ought to discuss both the pros and cons of the specified topic for 2 minutes. A total of 91 students participated in this event.<br>
+                   <h3> 5.	TECHNICAL QUIZ</h3><br>
+*The Technical Quiz is a competition that brings out in the students the quality to recall the learning at the proper time and proper manner as fast as they can. Several rounds of questions will be asked to various groups of students in technical a subject, which not only improve knowledge but also develops competitive spirit. About 120 students participated in quiz competition.<br>
+ <h3>                6.	ON-LINE APTITUDE TEST</h3>   <br>
+*Forum conducted two types of Aptitude Tests, one is on techncial subjects and another is on analytical, quantitative and verbal. A total of 91 students participated in Aptitude Test.<br>
+<h3>                   7.	MOCK INTERVIEWS</h3> <br>
+*This event aims at educating outgoing students to perform well in their real time interviews by filtering through four phases namely, Written test, Group Discussion, Technical interview, and HR interview. About 75 students actively participated in mock Interviews by submitting their resumes.</td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DSincepg' %}
+            <table align="center" width="1010" border="2">
+            <tr><td><img src="{% static 'images/cse1.JPG' %}" width="1010" height="350"></td></tr>
+            <tr><td><img src="{% static 'images/cse2.JPG' %}" width="1010" height="350"></td></tr>
+            <tr><td><img src="{% static 'images/cse3.JPG' %}" width="1010" height="350"></td></tr>
+            <tr><td><img src="{% static 'images/cse5.JPG' %}" width="1010" height="350"></td></tr>
+            <tr><td><img src="{% static 'images/cse7.JPG' %}" width="1010" height="350"></td></tr>
+            <tr><td><img src="{% static 'images/cse9.JPG' %}" width="1010" height="350"></td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DSince' %}
+            <table align="center" border="2" style="margin-top: 20px">
+            <tr><td><a href="/DSincep/?type=DSincep">Programs offered</a> </td></tr>
+            <tr><td><a href="/DSincefa/">Faculty</a> </td></tr>
+            <tr><td><a href="/DSincesa/?type=DSincesa">Student Activees</a> </td></tr>
+            <tr><td><a href="/DSincepg/?type=DSincepg">Gallery</a> </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DElectronicsp'%}
+        <table align="center" border="2" width="1010" style="margin-top: 20px">
+            <tr><td><h1 align="center" style="color: cornflowerblue">Programs Offered in ECE</h1>
+                <p><img src="{% static 'images/ece1.jpg' %}" align="right" width="350"><h5>PROGRAM: B.Tech</h5><br>
+                INTAKE : 60<br>
+                ACADEMIC REGULATIONS FOR UG (B.Tech): SYLLABUS FOR I B.TECH : <br>
+                (Common for All Branches)<br>
+                SYLLABUS FOR II, III, IV B.TECH :</p></td></tr>
+        </table>
+        {% endif %}
+        {% if type == 'DElectronicssa' %}
+            <table align="center" border="2" width="1010">            <tr><td>
+                <h1 align="center">Student Activities in ECE</h1>
+                <p style="color: cadetblue"><img src="{% static 'images/ece4.JPG' %}" align="right" width="550" height="250"><h4>Real time operating systems</h4><br></p>
+                <p style="color: black">*E-Ball<br>
+                *MEMS.<br>
+                *Mobile charging using microwaves<br>
+                *Agriculture Controlling Using Mobile Phones<br>
+                *O-LED<br>
+                *Robotics<br>
+                *4G Technology.<br>
+                *Optical Fiber Communications<br>
+                *CRO<br>
+                    *Diodes<br></p>
+
+                <h3>Other Activities</h3>
+                <p style="color: black">*In addition to the project seminars and general seminars, programs like Technical Quiz, and Essay writing competitions were conducted.<br>
+                *A Technical Exhibition was conducted on 18th, 19th & 20th February-2015 as a part of Tri-Decennial Celebrations of College.<br>
+                *As a part of curriculum the IV B.Tech students visited many industries to enrich their technical knowledge practically.<br>
+                *The Department of ECE students visited local DOORDARSHAN CENTER & BSNL office to impact their theoretical Knowledge with practical knowledge.<br>
+                *YOGA classes are conducted weakly once.<br>
+                *NSS camp was conducted weakly once.</p>
+</td></tr>
+            </table>
+
+        {% endif %}
+        {% if type == 'DElectronicsga' %}
+            <table width="1010" border="2" align="center">
+            <tr><td><img src="{% static 'images/ece1.jpg' %}" width="1000" height="450"></td></tr>
+            <tr><td><img src="{% static 'images/ece2.png' %}" width="1000" height="450"></td></tr>
+            <tr><td><img src="{% static 'images/ece4.JPG' %}" width="1000" height="450"></td></tr>
+            <tr><td><img src="{% static 'images/ece6.jpg' %}" width="1000" height="450"></td></tr>
+            <tr><td><img src="{% static 'images/cse9.JPG' %}" width="1000" height="450"></td></tr>
+            <tr><td><img src="{% static 'images/cse7.JPG' %}" width="1000" height="450"></td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DElectronics' %}
+                       <table align="center" border="2" style="margin-top: 20px">
+            <tr><td><a href="/DElectronicsp/?type=DElectronicsp">Programs offered</a> </td></tr>
+            <tr><td><a href="/DElectronicsf/">Faculty</a> </td></tr>
+            <tr><td><a href="/DElectronicssa/?type=DElectronicssa">Student Activees</a> </td></tr>
+            <tr><td><a href="/DElectronicsga/?type=DElectronicsga">Gallery</a> </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DElectricalpo' %}
+            <table width="1000" align="center" border="2" style="margin-top: 20px">
+                <tr><td><h1 align="center" style="color: cornflowerblue">Programs Offered in EEE</h1><br>
+                    <h3>PROGRAM: B.Tech</h3><br>
+                    *INTAKE : 60<br>
+                    <p><img src="{% static 'images/eee5.jpg' %}" align="right" height="200">*ACADEMIC REGULATIONS FOR UG (B.Tech): SYLLABUS FOR I B.TECH :<br>
+                        (Common for All Branches)<br></p>
+
+SYLLABUS FOR II, III, IV B.TECH :</td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DElectricalsd' %}
+            <table align="center" border="2" width="1010" style="margin-top: 20px">
+                <tr><td><h1 align="center" style="color: cornflowerblue">Student Activities in EEE</h1><br>
+                   <p style="color: cornflowerblue"><img src="{% static 'images/eee4.jpg' %}" align="right" height="300"> *A car of the future, built today the one little later.<br>
+                    *Experimental comparison of various wind parameters of three blade savonius wind turbine.<br>
+                    *Comparison of gas production rates, steam generation rates in up drift gassifier.<br>
+                    *Thermal performance of heat pipe by using different working fluids.<br>
+                    *Simulation and modeling of air flow around a NACA 0012 air foil.<br>
+                    *Heat transfer analysis of gas turbine blades through cooling holes.<br>
+                    *Experimental study on thermal efficiency of solar flat plate collector.<br>
+                    *Static and dynamic analysis of statically indeterminate beams using regression method.<br>
+                    *Optimization studies on friction drilling.<br>
+                    *Optimizing the PTFE Teflon vortex tube parameters using taguchi technique.<br>
+                    *Waste heat recovery from generator- diesel engine based.<br>
+                    *Performance analysis of flat plate collector by using nano fluids.<br>
+                    *Optimum gate location in plastic injection moulding process by computer simulation.<br>
+                    *Thermal performance of different working fluids in a dual diameter circular heat pipe.<br>
+                    *Automotive Trends (Guest lecture).<br>
+                    *Wankel engine working.<br>
+                    *Road safety (Guest lecture).<br>
+                    *Design analysis and quality checks of storage tanks.<br></p>
+                    <h3>Other Activities</h3><br>
+                    *In addition to the project seminars and general seminars, programmes like Technical Quiz, Essay writing, and 3D CAD modeling competitions were conducted.<br>
+                    *The forum is happy to state that special lectures and practice tests oriented towards GATE-2015 resulted in 20 GATE scores and two students got good score in CAT.<br>
+                    *A Technical Exhibition was conducted on 18th, 19th & 20th February-2015 as a part of Tri-Decennial Celebrations of College.<br>
+                    *A Technical Festival Jignasa 2014 was conducted in the month of December-2014.<br>
+                    *A National Level Student Technical Symposium (Radiance-2013) was conducted during 18th, 19th, January 2013 by the Mechanical Engg. Department.</td></tr>
+            </table>
+
+        {% endif %}
+        {% if type == 'DElectricalga' %}
+            <table align="center" width="1010" border="2">
+            <tr><td><img src="{% static 'images/eee1.jpg' %}" width="1010" height="350"></td></tr>
+            <tr><td><img src="{% static 'images/eee2.jpg' %}" width="1010" height="350"></td></tr>
+{#            <tr><td><img src="{% static 'images/eee3.JPG' %}"></td></tr>#}
+            <tr><td><img src="{% static 'images/eee4.jpg' %}" width="1010" height="350"></td></tr>
+            <tr><td><img src="{% static 'images/eee5.jpg' %}" width="1010" height="350"></td></tr>
+            <tr><td><img src="{% static 'images/eee6.jpg' %}" width="1010" height="350"></td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DElectrical' %}
+
+                       <table align="center" border="2" style="margin-top: 20px">
+            <tr><td><a href="/DElectricalpo/?type=DElectricalpo">Programs offered</a> </td></tr>
+            <tr><td><a href="/DElectricals/">Faculty</a> </td></tr>
+            <tr><td><a href="/DElectricalsd/?type=DElectricalsd">Student Activees</a> </td></tr>
+            <tr><td><a href="/DElectricalga/?type=DElectricalga">Gallery</a> </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DMechanicalpo' %}
+            <table width="1010" border="2" align="center" style="margin-top: 20px">
+                <tr><td><h1 align="center" style="color: cornflowerblue">Programs Offered in M.E</h1><br>
+                   <p><img src="{% static 'images/mec1.jpg' %}" align="right"> PROGRAM: B.Tech<br>
+                    INTAKE : 60<br>
+                    ACADEMIC REGULATIONS FOR UG (B.Tech): SYLLABUS FOR I B.TECH :<br>
+                    (Common for All Branches)<br>
+                    SYLLABUS FOR II, III, IV B.TECH :</p>
+ </td></tr>
+            </table>
+        {% endif  %}
+        {% if type == 'DMechanicalsd' %}
+            <table align="center" border="2" width="1010" style="margin-top: 20px">
+                <tr><td><h1 align="center">Student Activities</h1></b>
+                    <p><img src="{% static 'images/mec5.jpg' %}" align="right" width="400">*A car of the future, built today the one little later.<br>
+                    *Experimental comparison of various wind parameters of three blade savonius wind turbine.<br>
+                    *Comparison of gas production rates, steam generation rates in up drift gassifier.<br>
+                    *Thermal performance of heat pipe by using different working fluids.<br>
+                    *Simulation and modeling of air flow around a NACA 0012 air foil.<br>
+                    *Heat transfer analysis of gas turbine blades through cooling holes.<br>
+                    *Experimental study on thermal efficiency of solar flat plate collector.<br>
+                    *Static and dynamic analysis of statically indeterminate beams using regression method.<br>
+                    *Optimization studies on friction drilling.<br>
+                    *Waste heat recovery from generator- diesel engine based.<br>
+                    *Performance analysis of flat plate collector by using nano fluids.<br>
+                    *Optimum gate location in plastic injection moulding process by computer simulation.<br>
+                    *Thermal performance of different working fluids in a dual diameter circular heat pipe.<br>
+                    *Automotive Trends (Guest lecture).<br>
+                    *Wankel engine working.<br>
+                    *Road safety (Guest lecture).<br>
+                    *Design analysis and quality checks of storage tanks.<br>
+                    <h3>Other Activities</h3><br>
+                    *In addition to the project seminars and general seminars, programmes like Technical Quiz, Essay writing, and 3D CAD modeling competitions were conducted.<br>
+                    *The forum is happy to state that special lectures and practice tests oriented towards GATE-2015 resulted in 20 GATE scores and two students got good score in CAT.<br>
+                    *A Technical Exhibition was conducted on 18th, 19th & 20th February-2015 as a part of Tri-Decennial Celebrations of College.<br>
+                    *A National Level Student Technical Symposium (Radiance-2013) was conducted during 18th, 19th, January 2013 by the Mechanical Engg. Department.</td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DMechanicalga' %}
+            <table align="center" width="100" border="2">
+            <tr><td><img src="{% static 'images/mec1.jpg' %}"></td></tr>
+            <tr><td><img src="{% static 'images/mec2.jpg' %}"></td></tr>
+            <tr><td><img src="{% static 'images/mec3.jpg' %}"></td></tr>
+            <tr><td><img src="{% static 'images/mec4.jpg' %}"></td></tr>
+            <tr><td><img src="{% static 'images/mec5.jpg' %}"></td></tr>
+{#            <tr><td><img src="{% static 'images/mec6.jpg' %}"></td></tr>#}
+            <tr><td><img src="{% static 'images/mec7.jpg' %}"></td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'DMechanical' %}
+
+                       <table align="center" border="2" style="margin-top: 20px">
+            <tr><td><a href="/DMechanicalpo/?type=DMechanicalpo">Programs offered</a> </td></tr>
+            <tr><td><a href="/DMechanicalfd/">Faculty</a> </td></tr>
+            <tr><td><a href="/DMechanicalsd/?type=DMechanicalsd">Student Activees</a> </td></tr>
+            <tr><td><a href="/DMechanicalga/?type=DMechanicalga">Gallery</a> </td></tr>
+            </table>
+        {% endif %}
+        {% if type == "home" %}
+        <table align="center">
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td width="350">
+                    <font size="4" face="Arial Rounded MT Bold">
+                    SSN is dedicated to imparting futuristic technical and management education in the key academic-industrial areas and instill higher standards of knowledge to students through qualified faculty and excellent infrastructure set to global standards, thus improving the quality of technical education and contributing to the development of the Nation.<br>
+                        Established in the year 2001 at Ongole, Prakasam district, Andhra Pradesh.<br>
+                        Sri Satyanarayana Engineering college is considered to be one of the best and finest colleges that provide professional education to students in AP. Every year thousands of fresh professionals get introduced to the industry by SSN.<br>
+                        With the Wifi college campus spread across 2 acres, students find it the best place to study professional courses.<br>
+                        SSN is affiliated to JNTU Kakinada with Counselling code SSNO
+                    </font>
+                </td>
+                <td>
+                    <img src="{% static 'images/SSN2.jpg' %} " width="650" height="450">
+                </td>
+            </tr>
+        </table>
+        {% endif %}
+        {% if type == 'Acadamics' %}
+            <table align="center" border="2" style="margin-top: 10px">
+            <tr><td><a href="/Program/?type=Program">Program Offered</a> </td></tr>
+            <tr><td><a href="/shchedual/?type=shchedual">Acadamic shchedule</a> </td></tr>
+            <tr><td><a href="/Examination/?type=Examination">Examinations</a> </td></tr>
+            <tr><td><a href="/Awards/?type=Awards">Medals&Awards</a> </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Program' %}
+            <table align="center" border="2" style="margin-top: 20px">
+            <tr><td><a href="/Civil/?type=Civil"> Civil Engineering</a></td></tr>
+            <tr><td><a href="/Since/?type=Since"> Computer Since and Engineering</a></td></tr>
+            <tr><td><a href="/Electronics/?type=Electronics"> Electronics and Communication Engineering</a></td></tr>
+            <tr><td><a href="/Electrical/?type=Electrical">Electrical and Electronics  Engineering</a></td></tr>
+            <tr><td><a href="/Mechanical/?type=Mechanical">Mechanical Engineering</a></td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'shchedual' %}
+            <table border="2" align="center" width="1010" style="margin-top: 10px">
+            <tr>
+                <td>
+                    <h1 align="center" style="color: cornflowerblue">ACADEMIC CALENDAR</h1>
+                        <p><img src="{% static 'images/SSN2.jpg' %}" align="right" width="600">*B.Tech.I,II, III & IV year II Sem.<br>
+                              *ACADEMIC CALENDAR-B.Tech-FALL SEMESTER(2018-2019)<br>
+                              *B.Tech.I,II, III & IV year II Sem.<br>
+                            *ACADEMIC CALENDAR-B.Tech- SPRING SEMESTER(2018-2019)</p></td>
+            </tr>
+            </table>
+        {% endif %}
+        {% if type == 'Civil' %}
+            <table align="center" width="1010" border="2">
+            <tr><td>
+                <h1 align="center" style="color: darkseagreen">Civil Engineering</h1>
+                <p><img src="{% static 'images/civil1.jpg' %}" align="left">
+Civil Engineering was started in the Academic Year 2011-12 with annual student intake of 60. The course has approved by AICTE and affiliated to JNTUniversity,Anantapur. Civil Engineering Department consists of modern laboratories of Surveying, Strength of Materials, Fluid Mechanics & Hydraulics, Geology, Environmental Engineering, Geo Technical Engineering, Concrete & Highway Engineering, GIS & CAD.
+
+It offers students a solid grounding in better utilization of resources and greater standardization of construction processes required by the construction industry. Students are taught how to use and employ innovative design methods and techniques. Exposure to contemporary facets planning, construction design and project management are the key aspects of the course.
+
+Vision : To make the Civil Engineering Department at MEKAPATI RAJAMOHAN REDDY INSTITUTE OF TECHNOLOGY AND SCIENCE,UDAYAGIRI;
+                    a leader in the education of practice-oriented Civil Engineers that benefit industry and society.</p>
+
+
+<p><img src="{% static 'images/civil2.jpg' %}" align="right">Mission: The mission of the Department is to prepare students from a wide variety of backgrounds for professional careers through curriculam, focused on the latest practices of Civil Engineering.</p></td></tr></table>
+        {% endif %}
+        {% if type == 'Since' %}
+            <table align="center" border="2" width="1010">
+            <tr><td>
+                <h1  style="color: cadetblue">Computer Science and Engineering</h1>
+                <p style="color: cadetblue"><img src="{% static 'images/cse1.JPG' %}" align="right" width="300" height="200">
+                    The Computer Science engineering branch was established in the academic year 2002 - 2003 with an intake of 40 students and increased to 120 subsequently. The Department provides an outstanding research environment with the aid of qualified faculty. Besides, theoretical research, faculty in the department also network with many reputed national and international companies and are involved in a number of projects in the areas of cutting edge technologies. The department has a separate building and all necessary resources like multimedia classrooms, computer labs and a unique laptop lab. Some of the most highly advanced as well as the most popular software packages like Windows NT, Windows 98, MS-DOS, Linux SOFTWARE : C,C++, VB, Advanced Java, ORACLE 8i, PL/SQL, UML, SQL are being studied by the students.</p></td></tr>
+            </table>
+
+        {% endif %}
+        {% if type == 'Electronics' %}
+            <table align="center" border="2" width="1010">
+            <tr><td>
+                <h1 align="center" style="color: cadetblue">Electronics and Communication Engineering</h1>
+                <p style="color: black"><img src="{% static 'images/ece4.JPG' %}" align="left" width="250" height="250">The Electronics and Communication engineering department was established in the academic year 2002 - 2003 with an intake of 60 students and . The Department has well Qualified & Experienced faculty. The Department has well equipped labs, which meet the standards specified by the JNTUK, kakinadda.The Department is motivated not only by its alumni and philanthropist but also guests from academics & Industry. The department excels in VLSI & Embedded Systems, Device Fabrication & sensory technology, Microwave Engineering & Radars, Wavelets and Signal processing.</p>
+
+</td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Electrical' %}
+            <table align="center" border="2">
+            <tr><td>
+                <h1 align="center">Electrical and Electronics Engineering</h1>
+                The EEE department was established in the year 2002 with an intake of 60 students. Since inception, the Department was developed with the combination of Industry, Academic and Research personnel to remove gap between academics and Industry. The teaching faculty is chosen from different specializations such as Power Electronics, Power Systems, Energy Systems, Instrumentation and Control Systems so as to impart excellent knowledge to the students in the core subjects. Distinguished and highly motivated faculty members are guiding the student projects in the cutting edge technologies.
+                The department is endowed with well-equipped labs which meet the standards specified by the Jawaharlal Nehru Technological University, Anantapur.</td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Mechanical' %}
+            <table align="center" border="2" width="1010">
+            <tr><td>
+                <h1 align="center" style="color: cornflowerblue">Mechanical Engineering</h1>
+                <p><img src="{% static 'images/mec1.jpg' %}" align="left">Department of Mechanical Engineering was established in the year 2002 with an intake of 40 students and gradually increased to 60.The department excels in Design, Modeling and Analysis, Composites, Finite Element Analysis, Advanced Welding Technology, Surface Engineering, CAD/ CAM & Mechatronics, Industrial Automation, Taguchi Techniques and Nanotechnology. Effective utilization of experienced faculty in the field of Mechanical Engineering has become the added advantage.<br>
+                    Well-trained and suitably qualified laboratory staff was inducted for technical assistance during the experimentation. Multiple laboratory handling and on hands practice is ascertained amongst the five supporting staff members. Specialization at the post- graduation of faculty members has been regarded as the department policy for better allocation of the subjects and justification for the true class room education. Concept of tutorials, as a part of the teaching, was practiced for analytical subjects.</p>/</td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Examination' %}
+            <table align="center" border="2" style="margin-top: 20px">
+            <tr><td><a href="/Rules/?type=Rules">Rules & Regulations</a> </td></tr>
+            <tr><td><a href="/malparc/?type=malparc">Malparctice</a> </td></tr>
+            <tr><td><a href="/Result/?type=Result">Exam Result</a> </td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'Rules' %}
+            <table align="center" border="2" width="1010">
+            <tr><td>
+                <h1 align="center" style="color: cornflowerblue">Rules & Regulations Regarding Sessional / End Examinations</h1>
+                <p><img src="{% static 'images/SSS.jpg' %}" align="left" height="350" width="350">*Students should carry identity card for sessional exam and Hall ticket & Identity Card for end examinations.<br>
+	*There is no grace period for entering into the exam hall after the commencement of exam both for End examinations and the Sessional examinations.<br>
+                *A short caution bell 5 minutes before the commencement of exam will be given and after a long bell at the scheduled commencement of exam no candidate will be allowed to enter into the exam hall.
+	Students should fill in all the particulars on the main answer books. <br>
+                *Students are required to write their permanent registered number in the space provided on the main answer sheet and in the space provided on the question paper only and nowhere else.
+	No additional answer books shall be supplied during sessional/end exams.<br>
+                *For sessionals a 24 page answer book and for end exams 36 page answer book will only be issued.<br>
+	*In the attendance and answer book distribution sheet, the candidate has to mention the serial number of the answer book issued to him and affix his signature.
+	Students are strictly prohibited from writing their registered number on the drawing sheet, failing which their answer sheet shall not be valued.<br>
+	*Carrying mobile phones during examinations is strictly prohibited. <br>
+                *Any mobile phone found in possession of the student will be confiscated and also a malpractice case will be booked.<br>
+	*Any malpractice noticed in the exam halls will be viewed seriously. <br>
+                *The performance of the students will be cancelled and they will be awarded zero marks in all the subjects.<br>
+                *Students are strongly advised not to resort to malpractice in their own interest.<br>
+	*Students should not move in the corridors of the examination halls before the commencement and after completion of exam.<br>
+	*Students are required to go through the instructions on the main answer book.<br>
+                    *However, the student will be allowed to enter into the exam hall 15 minutes before the commencement of exam.</p>
+</td></tr>
+            </table>
+        {% endif %}
+        {% if type == 'malparc' %}
+            <table align="center" border="2" width="1010">
+            <tr>
+                <td>Possesses or keeps accessible in examination hall, any paper, note book, programmable calculators, Cell phones, pager, palm computers or any other form of material concerned with or related to the subject of the examination (theory or practical) in which he is appearing but has not made use of (material shall include any marks on the body of the student which can be used as an aid in the subject of the examination)</td>
+                <td>Uses objectionable, abusive or offensive language in the answer paper or in letters to the examiners or writes to the examiner requesting him to award pass marks.</td>
+                <td>Copying detected on the basis of internal evidence, such as, during valuation or during special scrutiny</td>
+                <td>Gives assistance or guidance or receives it from any other student orally or by any other body language methods or communicates through cell phones with any other student or persons in or outside the exam hall in respect of any matter.</td>
+            </tr>
+            </td>
+            <tr>
+                <td>Expulsion from the examination hall and cancellation of the performance in that subject only.</td>
+                <td>Cancellation of the performance in that subjec</td>
+                <td>Cancellation of the performance in that subject and all other subjects the candidate has appeared including practical examinations and project work of that semester/year examinations.</td>
+                <td>Expulsion from the examination hall and cancellation of the performance in that subject only of all the students involved. In case of an outsider, he will be handed over to the police and a case is registered against him.</td>
+            </tr>
+            </table>
+        {% endif %}
+        {% if type == 'Result' %}
+            <table border="2" align="center" style="margin-top: 20px">
+            <tr><td><a href="/google/">
+Click Here for Results of B.Tech I Year (R13) Regular/supplementary Examinations May/June 2015</a> </td></tr>
+            </table>
+
+        {% endif %}
+        {% if type == 'Awards' %}
+            <table align="center" border="2" style="color: cornflowerblue">
+            <tr>
+                <td>
+
+                    <h1 align="center">Academic Toppers</h1>
+
+Year	Roll Number	Name of the Student	Percentage (%)<br>
+Department :EEE<br>
+2002	02L41A0228	Madhu Vinjamuru	78.92<br>
+2003	03L41A0211	Prajwala Manubothu	77.08<br>
+2004	05L45A0203	Narendra Korrapolu	77.78<br>
+2005	05L41A0256	Mule Laxmi Devi Ramanaiah	75.75<br>
+2006	06L41A0231	Kolagani Sravya	77.80<br>
+2007	07L41A0219	A.Aswartha Narayana Rao	80.02<br>
+2008	08L41A0224	Settipalli Amala	78.49<br>
+2009	09L41A0227	Jarugu Vikram Kumar Reddy	88.83 (GOLD MEDAL)<br>
+2010	10L41A0219	Nuliveedu Sushma	81.69<br>
+2011	11L41A0203	Ch.Ravitheja	66.29<br>
+Department :ME<br>
+2002	02L41A0331	Vani Priya Eedala	81.48<br>
+2003	04L45A0301	Riyaz Basha Shaik	76.07<br>
+2004	04L41A0317	Anil kumar Duddugunta	82.74<br>
+2005	06L45A0301	A.Anil Kumar Reddy	73.35<br>
+2006	06L41A0325	Gaddela R. Kully Reddy	75.94<br>
+2007	07L41A0335	Parimala Polisetty	80.74 (GOLD MEDAL)<br>
+2008	08L41A0321	Bandi Manasa	75.06<br>
+2009	09L41A0324	Manasa K	82.37<br>
+2010	10L41A0306	Srihari N K Murthy	81.35<br>
+2011	11L41A0314	B.Harshavardhan Reddy	79.10<br>
+2012	12L41A0302	V.Mahesh	74.31<br>
+Department :ECE<br>
+2002	02L41A0437	Sowjanya Kamma	77.60<br>
+2003	03L41A0446	Arun kumar Thumma	82.27<br>
+2004	04L41A0453	Paramsetty Diwakar	79.68<br>
+2005	05L41A0485	Puli Sudhakar Reddy	79.20<br>
+2006	06L41A0429	Gajula Palli Swathi	81.74<br>
+2007	07L41A0421	Kasina Kalpana	84.41<br>
+2008	08L41A0426	Shaik Rahil Babu	76.49<br>
+2009	09L41A0484	Chevuru Hamavani	81.63<br>
+2010	10L41A0421	Mudda Bhuvaneswari	82.25<br>
+2011	11L41A0423	M.Lakshmi Sandyasree	78.83<br>
+2012	12L41A0414	T.Sekaraiah	73.37<br>
+Department :CSE<br>
+2002	02L41A0519	Golla Hemanth Kumar Reddy	74.05<br>
+2003	03L41A0502	Mallineni kalpana	72.33<br>
+2004	04L41A0532	Kovvuru Mahesh Babu	74.36<br>
+2005	05L41A0533	Biyyam Durga Alekhya	73.24<br>
+2006	06L41A0521	Salva Sreenivasulu	76.21<br>
+2007	07L41A0556	Peddaobulesu Jyothsna	82.73<br>
+2008	08L41A05B1	Avula Venkateswarlu	75.23<br>
+2009	09L41A0543	Kambala Narasimhulu	78.27<br>
+2010	10L41A0528	Poka Roja	75.00<br>
+2011	11L41A0507	Chalamala Jayalakshmi	71.52<br>
+Department :IT<br>
+2007	07L41A1213	Poka Sirisha	74.95<br>
+2008	08L41A1224	Piccili Hajarathaiah	74.67<br>
+2009	09L41A1201	Kalluru Suma	72.13<br>
+Department :Civil<br>
+2011	11L41A0103	N.Hrushi Kesava Reddy	73.88<br>
+2012	12L41A0108	G.Manoj Kumar Reddy	70.57<br>
+
+                </td>
+            </tr>
+            </table>
+        {% endif %}
+
+        {% if type == "h_donor" %}
+        <form action="/Studentsavelogin/" method="post">
+            {% csrf_token %}
+        <table align="center" border="0">
+            <tr><th><h2><font color="blue">{{ msg1 }}</font></h2></th></tr>
+            <tr><th height="50" width="200"> Student login </th></tr>
+            <tr><th height="50" width="200"> <input type="email" placeholder="Username" required name="s_uname"> </th></tr>
+            <tr><th height="50" width="200"> <input type="password" placeholder="Password" required name="s_passa"> </th></tr>
+            <tr><th height="50" width="200">{{ mss }}</th></tr>
+            <tr><th height="50" width="200"> <input type="submit" value="Login"> </th></tr>
+            <tr><th>
+                <a href="/openStudentRegister/?type=h_Student_register">
+                    New student Register
+                </a>
+            </th>
+            </tr>
+        </table>
+        </form>
+        {% endif %}
+        {% if type == 'admin' %}
+            <form action="/adinmlogin/" method="post">
+            {% csrf_token %}
+            <table align="center" border="2">
+                <tr>
+                    <th>{{ mas3 }}</th>
+                </tr>
+            <tr>
+            <th>Admin Login Page</th>
+            </tr>
+            <tr>
+            <td>
+                <input type="text" placeholder="user name" name="adminuser" required>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <input type="password" placeholder="password" name="adminpassword" required>
+            </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="submit" value="Login">
+                </td>
+            </tr>
+            </table>
+            </form>
+        {% endif %}
+
+        {% if type == "Admission" %}
+            <table align="center" border="2" style="margin-top: 20px" width="100">
+            <tr><td><a href="/Freessn/?type=freessn">fee Structure</a> </td></tr>
+            <tr><td><a href="/Shcolarship/?type=Shcolarship">Shcolarships</a> </td></tr>
+            </table>
+        {% endif %}
+
+        {% if type == "h_Student_register" %}
+            <form action="/registerStudent/"   method="post">
+                {% csrf_token %}
+            <table align="center" border="0">
+                <tr>
+                    <th width="250" >
+                        <h3>Student Registration</h3>
+                    </th>
+                </tr>
+            <tr>
+{#                    <th width="250" >#}
+{#                        {% csrf_token %}#}
+{#                        <select#}
+{#                                onselect="true"#}
+{#                                name="d_state"#}
+{#                                onchange="check()"#}
+{#                                id="one">#}
+{#                        {% if key == "one" %}#}
+{#                            <option>{{ states }}</option>#}
+{#                         {% else %}#}
+{#                            {% for x in states %}#}
+{#                                <option>{{ x }}</option>#}
+{#                            {% endfor %}#}
+{#                          {% endif %}#}
+{#                        </select>#}
+{#                    </th>#}
+{#                </tr>#}
+{##}
+{#            <tr>#}
+{#                    <th width="250" >#}
+{#                        <select name="d_city">#}
+{#                            {% for x in city_names %}#}
+{#                                <option>{{ x }}</option>#}
+{#                            {% endfor %}#}
+{#                        </select>#}
+{#                    </th>#}
+{#                </tr>#}
+                <tr><th width="250"><input type="text" placeholder="studentname" name="sf_name"></th></tr>
+                <tr><th width="250" ><input type="text" placeholder="father name" required name="s_name"></th></tr>
+                                <tr><th width="250" ><input type="email" placeholder="Email-Id" required name="s_email"></th> </tr>
+
+
+                <tr><th width="250" ><input type="number" placeholder="Contact No" required name="s_cno"></th> </tr>
+
+                	<tr><th><select name="s-class" id="counter_select" class="counter_input counter_options">
+								<option>Choose coures</option>
+								<option>ece</option>
+								<option>eee</option>
+								<option>cse</option>
+								<option>civil</option>
+								<option>mec</option>
+							</select>
+                </th></tr>
+                <tr><th width="250" ><input type="password" placeholder="Password" required name="s_passa"></th> </tr>
+                <tr><th>
+					Gender:
+						<input type="radio" name="work" id="hire" value="male" checked>Male
+						<input type="radio" name="work" id="work" value="female">Female
+                </th></tr>
+                <tr><th width="250" ><input type="Submit" value="Register"></th> </tr>
+            </table>
+            </form>
+        {% endif %}
+        {% if type == 'freessn' %}
+            <table align="center" border="2">
+            <tr>
+                           <td>
+                    <img src="{% static 'images/ssn6.jpg' %} " width="1000" height="300">
+                </td>
+                </tr>
+                <tr>
+                <td width="350">
+                    <font size="4" face="Arial Rounded MT Bold">
+                        <h1 align="center" style="color: darkseagreen">Fee Structure</h1>
+
+
+
+<h3 style="color: darkseagreen">B.Tech Programmes (Four Year Courses)</h3><br>
+
+
+                        <p><img src="{% static 'images/Chairman.jpg' %}" align="left">
+                            Thousands of students and their parents are fortunate for being a part of the SSN Family.<br>
+                            The dedication and commitment of the faculty to the cause ensures the growth of the skills that a student is good at.<br>
+                            Apart from professionals, our college has got National players in different sports like cricket, badminton, volleyball, and others.<br>
+                            What are you waiting for join our SSN Family now.<br>
+                            <br>
+                            <br>
+                            <br>
+                            The annual tuition fee fixed by the Government of Andhra Pradesh(AFRC) for B.Tech courses in this college for the academic year 2016-17,2017-2018,and 2018-2019 is Rs.50,200 (Fifty Thousand two hundred ).<br>
+                        Hence, the candidates taking admission in this college are to give an undertaking that they will pay the difference of tuition fees, if any.<br>
+
+                        The tuition fee is same for both Category – A Seats and Category – B.Seats.<br>
+                            <br>
+                            <br>
+                        The main difference between Category – A Seats and Category – B seats is, B – CATEGORY STUDENTS ARE NOT ELIGIBLE FOR TUITION FEE REIMBURSEMENT OR ANY WELFARE SCHOLARSHIPS.<br>
+
+
+                        1. Details of the fee to be paid at the time of admission into B.Tech<br>
+
+                            Fee details are as per fixed by the Government of Andhrapradesh(AFRC) and JNTKkakinadda.<br>
+                        The mission of those at SSN is to provide quality technical education to satisfy the needs of the Industry and thereby, the society.
+SSN strives to create and uphold a community of learning in which students acquire knowledge and learn to apply it
+professionally, to meet any challenge that they may face and to sustain the progress of the nation towards peace and prosperity.</p>
+                    </font>
+                </td>
+
+            </tr>
+            </table>
+        {% endif %}
+        {% if type == 'Shcolarship' %}
+            <table align="center" border="2" width="1010" style="margin-top: 20px">
+            <tr>
+                <td>
+                    <img src="{% static 'images/ssn7.jpg' %}">
+                </td>
+                <td>
+                    <h1 align="center">Scholarships</h1>
+
+
+
+<h3 align="center" style="color: darkseagreen">B.Tech Programmes (Four Year Courses)</h3>
+
+
+
+
+<P style="color: cadetblue;font-weight: revert">The Government of Andhra Pradesh offers tuition fee reimbursement and scholarships to eligible students.
+
+    Trust also supports economically poor students and academic toppers.SSN is dedicated to imparting futuristic technical and management education in the key academic-industrial areas and instill higher standards of knowledge to students through qualified faculty and excellent infrastructure set to global standards, thus improving the quality of technical education and contributing to the development of the Nation.</P>
+                </td>
+            </tr>
+            </table>
+        {% endif %}
+       {% if type == "About" %}
+        <table align="center" width="1010">
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td>
+                    <font size="4" face="Arial Rounded MT Bold">
+              <tr>
+            <td>
+                <font size="4" face="Arial Rounded MT Bold">
+                      <p> Established in the year 2001 at Ongole, Prakasam district, Andhra Pradesh.<br>
+                    Sri Satyanarayana Engineering college is considered to be one of the best and finest colleges that provide professional education to students in AP.<br>
+                    Every year thousands of fresh professionals get introduced to the industry by SSN.<br>
+                    With the Wifi college campus spread across 2 acres, students find it the best place to study professional courses.<br>
+                    SSN is affiliated to JNTU Kakinada with Counselling code SSNO <img src="{% static 'images/SSS.jpg' %} " width="650" height="370" align="left">
+
+                    Thousands of students and their parents are fortunate for being a part of the SSN Family. <br>
+                    The dedication and commitment of the faculty to the cause ensures the growth of the skills that a student is good at. <br>
+                    Apart from professionals, our college has got National players in different sports like cricket, badminton, volleyball, and others.<br>
+                    What are you waiting for join our SSN Family now.<br>
+                    The mission of those at SSN is to provide quality technical education to satisfy the needs of the Industry and thereby, the society.<br>
+SSN strives to create and uphold a community of learning in which students acquire knowledge and learn to apply it
+professionally, to meet any challenge that they may face and to sustain the progress of the nation towards peace and prosperity.  </p></font></td>
+
+
+            </tr>
+        </table>
+        {% endif %}
+    {% if type == "h_faculty_register" %}
+            <form action="/facultysave/"   method="post">
+                {% csrf_token %}
+            <table align="center" border="0">
+                <tr>
+                    <th width="250" >
+                        <h3>Faculty Registration</h3>
+                    </th>
+                </tr>
+            <tr>
+
+                <tr><th width="250"><input type="text" placeholder="facultyname" name="f_name"></th></tr>
+                <tr><th width="250" ><input type="text" placeholder="father name" required name="ff_name"></th></tr>
+
+                <tr><th width="250" ><input type="email" placeholder="Email-Id" required name="email"></th> </tr>
+
+                <tr><th width="250" ><input type="number" placeholder="Contact No" required name="f_pone"></th> </tr>
+
+                	<tr><th><select name="s-class" id="counter_select" class="counter_input counter_options">
+								<option>Branch</option>
+								<option>ece</option>
+								<option>eee</option>
+								<option>cse</option>
+								<option>civil</option>
+								<option>mec</option>
+							</select>
+                </th></tr>
+                <tr><th width="250" ><input type="text" placeholder="Qualification" required name="f_Qulif"></th> </tr>
+
+                <tr><th width="250" ><input type="password" placeholder="Password" required name="s_pass"></th> </tr>
+                <tr><th>
+					Gender:
+						<input type="radio" name="work" id="hire" value="male" checked>Male
+						<input type="radio" name="work" id="work" value="female">Female
+                </th></tr>
+                <tr><th width="250" ><input type="Submit" value="Register"></th> </tr>
+            </table>
+            </form>
+        {% endif %}
+
+
+   {% if type == "about" %}
+        <table align="center">
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td width="350">
+                    <font size="4" face="Arial Rounded MT Bold">
+                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components). Donation may be of whole blood, or of specific components directly (the latter called apheresis). Blood banks often participate in the collection process as well as the procedures that follow it.
+                    </font>
+                </td>
+                <td>
+                     <h1>hi about</h1>
+                    <img src="{% static 'images/SSN2.jpg' %} " width="250" height="250">
+                </td>
+            </tr>
+        </table>
+        {% endif %}
+{% if fcivil %}
+       <table align="center" border="2" style="margin-top: 20px">
+           <th colspan="6"style="color: lightcoral" >Civil Faculty Details </th>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td>
+    </tr>
+
+   {% for x in fcivil %}
+
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+    </tr>
+   {% endfor %}
+   </table>
+{% endif %}
+   {% if fsince %}
+       <table>
+       <table align="center" border="2" style="margin-top: 20px">
+           <th colspan="6">CSE Faculty Details </th>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td>
+    </tr>
+
+   {% for x in fsince %}
+
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+    </tr>
+   {% endfor %}
+   </table>
+{% endif %}
+   {% if fece %}
+       <table align="center" border="2" style="margin-top: 20px">
+           <th colspan="6">ECE Faculty Details </th>
+        <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td>
+        </tr>
+
+            {% for x in fece %}
+
+                <tr>
+                <td>{{ x.name }}</td>
+                <td>{{ x.idno }}</td>
+                <td>{{ x.qualiufi }}</td>
+                <td>{{ x.reasearch }}</td>
+                <td>{{ x.exp }}</td>
+                <td>{{ x.dob }}</td>
+                </tr>
+            {% endfor %}
+       </table>
+   {% endif %}
+        {% if feee %}
+            <table align="center" border="2">
+           <th colspan="6">EEE Faculty Details </th>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td>
+    </tr>
+
+   {% for x in feee %}
+
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+    </tr>
+   {% endfor %}
+   </table>
+        {% endif %}
+                {% if fme %}
+            <table align="center" border="2" style="margin-top: 20px">
+           <th colspan="6">ME Faculty Details </th>
+    <tr>
+        <td>name</td>
+        <td>idno</td>
+        <td>qualification</td>
+        <td>research</td>
+        <td>experiance</td>
+        <td>dob</td>
+    </tr>
+
+   {% for x in fme %}
+
+    <tr>
+    <td>{{ x.name }}</td>
+    <td>{{ x.idno }}</td>
+    <td>{{ x.qualiufi }}</td>
+    <td>{{ x.reasearch }}</td>
+    <td>{{ x.exp }}</td>
+    <td>{{ x.dob }}</td>
+    </tr>
+   {% endfor %}
+   </table>
+        {% endif %}
+</table>
+</body>
+</html>
